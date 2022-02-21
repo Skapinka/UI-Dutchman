@@ -1,0 +1,53 @@
+<!-- This is the main page of our solution to the flying dutchman project -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Flying Dutchman</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/customer.css">
+
+    <script type="text/javascript" src="db/Beverages.js"></script>
+    <script type="text/javascript" src="db/DBLoaded.js"></script>
+    <script type="text/javascript" src="db/loader.js"></script>
+    
+    <script type="text/javascript" src="js/Dictionary.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+
+</head>
+
+<body>
+
+<div id="header">
+    <div id="title">
+    </div>
+
+    <div id="loginZone">
+        <form name="loginCredentials" action="javascript: void(0);">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+
+            <div>
+                <input type="submit" id="login" name="login" value="Log in" onClick="doLogin(loginCredentials)">
+            </div>
+        </form>
+
+    </div>
+
+    <div id="lang">
+        <img id="flag" src="" onclick="change_lang()"/>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
+
