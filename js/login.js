@@ -20,6 +20,7 @@ function doLogin(form) {
                 // If the username and password match, proceed with the login
                 user = this;
                 $.each(this, function(element) {
+                    localStorage.setItem('userdetails', userDetails(user.username));
                     localStorage.setItem('credentials', user.credentials);
                     return false;
                 });

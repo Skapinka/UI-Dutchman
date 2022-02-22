@@ -102,9 +102,49 @@ function allBeverages() {
     // items, you may introduce filter functions in the loop... see the template within comments.
     //
     for (i = 0; i < DB2.spirits.length; i++) {
-        collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp]);
+        collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
     };
     //
+    return collector;
+}
+
+
+// Should hopefully get all beverages of given type
+function getBeverageType(type) {
+    var collector = [];
+
+    for (i = 0; i < DB2.spirits.length; i++) {
+        if (DB2.spirits[i].varugrupp == type){
+            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+        }
+    };
+
+    return collector;
+}
+
+// Get all ecologic beverages
+function getBeverageEco() {
+    var collector = [];
+
+    for (i = 0; i < DB2.spirits.length; i++) {
+        if (DB2.spirits[i].ekologisk == 1){
+            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+        }
+    };
+
+    return collector;
+}
+
+// Get all koscher beverages
+function getBeverageKoscher() {
+    var collector = [];
+
+    for (i = 0; i < DB2.spirits.length; i++) {
+        if (DB2.spirits[i].koscher == 1){
+            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+        }
+    };
+
     return collector;
 }
 
@@ -130,7 +170,7 @@ function allStrongBeverages(strength) {
 
             // The key for the beverage name is "namn", and beverage type is "varugrupp".
             //
-            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp]);
+            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
         };
     };
 
