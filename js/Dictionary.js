@@ -5,7 +5,7 @@ var language = 'en'
 
 dict = {
     'keys' : ['title', 'langtext', 'menu_all', 'menu_beer', 'menu_wine', 'menu_spirits',
-                'menu_ecologic', 'menu_kosher', 'menu_specials'], // string keys
+                'menu_ecologic', 'menu_koscher', 'menu_specials', 'checkout_text'], // string keys
     'pics' : ['flag'],           // picture keys
 
     // English dictionary
@@ -17,8 +17,9 @@ dict = {
         "menu_wine": "Wine",
         "menu_spirits": "Spirits",
         "menu_ecologic": "Eco",
-        "menu_kosher": "Kosher",
-        "menu_specials": "Specials"
+        "menu_koscher": "Koscher",
+        "menu_specials": "Specials",
+        "checkout_text": "Checkout"
 
     },
 
@@ -31,8 +32,9 @@ dict = {
         "menu_wine": "Vin",
         "menu_spirits": "Sprit",
         "menu_ecologic": "Eko",
-        "menu_kosher": "Kosher",
-        "menu_specials": "Specialare"
+        "menu_koscher": "Koscher",
+        "menu_specials": "Specialare",
+        "checkout_text": "Kundvagn"
 
     },
 }

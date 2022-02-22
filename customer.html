@@ -19,6 +19,7 @@
     <script type="text/javascript" src="js/Dictionary.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/customer.js"></script>
 
 </head>
 
@@ -45,19 +46,28 @@
     </div>
 </div>
 
-<div id="menu">
-    <ul id="menuTabs">
-        <li id="menu_all"       class="mTab"></li>
-        <li id="menu_beer"      class="mTab"></li>
-        <li id="menu_wine"      class="mTab"></li>
-        <li id="menu_spirits"   class="mTab"></li>
-        <li id="menu_ecologic"  class="mTab"></li>
-        <li id="menu_kosher"    class="mTab"></li>
-        <li id="menu_specials"  class="mTab"></li>
-    </ul>
+<ul id="menuTabs">
+    <li id="menu_all"       class="mTab"></li>
+    <li id="menu_beer"      class="mTab"></li>
+    <li id="menu_wine"      class="mTab"></li>
+    <li id="menu_spirits"   class="mTab"></li>
+    <li id="menu_ecologic"  class="mTab"></li>
+    <li id="menu_koscher"   class="mTab"></li>
+    <!-- Specials should only be visible to VIP:s 
+        <li id="menu_specials"  class="mTab"></li> 
+    -->
+</ul>
 
+<div id="menu">
     <div id="menuItems">
         <!-- Drinks load here -->
+    </div>
+
+    <div id="checkout">
+        <h3 id="checkout_text">
+
+        </h3>
+        <!-- Checkout area right of drinks-->
     </div>
 </div>
 
