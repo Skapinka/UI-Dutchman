@@ -9,6 +9,7 @@
 // advantage that the data is easy to access through simple APIs. Also, when storing as local storage,
 // all data is stored as strings, which might be adding some complexity.
 //
+
 function allUserNames() {
     var nameCollect = [];
     for (i = 0; i < DB.users.length; i++) {
@@ -87,6 +88,23 @@ function changeBalance(userName, newAmount) {
             DB.account[i].creditSEK = newAmount;   // This changes the value in the JSON object.
         };
     };
+}
+
+function getBalance(userName) {
+    var userID;
+    
+    for (i = 0; i < DB.users.length; i++) {
+        if (DB.users[i].username == userName) {
+            userID = DB.users[i].user_id;
+        };
+    };
+
+    for (i = 0; i < DB.account.length; i++) {
+        if (DB.account[i].user_id == userID) {
+            return DB.account[i].creditSEK;
+        };
+    };
+    
 }
 
 // =====================================================================================================

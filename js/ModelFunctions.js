@@ -8,6 +8,7 @@
 //
 // The Data object holds the database.
 //
+
 function loadJSON(callback, file) {
 
     // We load the file using an XMLHttpRequest, which is part of AJAX
