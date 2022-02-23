@@ -2,9 +2,8 @@
  * shopping cart
  */
 
-var userID = localStorage.getItem('id');
+// var userID = localStorage.getItem('id');
 var currentTab = "all";
-
 
 /** Undo-redo stuff */
 
@@ -12,21 +11,25 @@ var undoStack = new Array(); // Fill this with past actions
 var redoStack = new Array(); // Fill this with "future" actions
 
 //Runs on website load
-
 $(document).ready(function() {
-    //loadDB();           // load database
     selectTab("all");    // highlight the all tab
     $('body').css("height", $(window).height()-10);
-    
 
     // ALL currently loads beverages >=60% alc
+    // On click
     $("#menu_all").click(function(){
+        // Highlight tab
         selectTab("all");
         currentTab = "all";
+
+        // Update the list of beverages (placeholder for 'all')
         beverageList = allStrongBeverages(60);
+
+        // Empty the beverage menu div
         $("#menuItems").empty();
+
+        // Loop through each entry in 'beverageList' and create a menu card for it
         $.each(beverageList, function(element){
-            // Print all beverages in list
             printBeverage(this);
 
         });
@@ -38,7 +41,6 @@ $(document).ready(function() {
         beverageList = getBeverageType('Ã–l, Ale');
         $("#menuItems").empty();
         $.each(beverageList, function(element){
-            // Print all beverages in list
             printBeverage(this);
 
         });
@@ -50,9 +52,7 @@ $(document).ready(function() {
         beverageList = getBeverageType('Vin av flera typer');
         $("#menuItems").empty();
         $.each(beverageList, function(element){
-            // Print all beverages in list
             printBeverage(this);
-
         });
     });
 
@@ -62,7 +62,6 @@ $(document).ready(function() {
         beverageList = getBeverageType('okryddad sprit');
         $("#menuItems").empty();
         $.each(beverageList, function(element){
-            // Print all beverages in list
             printBeverage(this);
 
         });
@@ -74,7 +73,6 @@ $(document).ready(function() {
         beverageList = allStrongBeverages(40);
         $("#menuItems").empty();
         $.each(beverageList, function(element){
-            // Print all beverages in list
             printBeverage(this);
 
         });
@@ -86,7 +84,6 @@ $(document).ready(function() {
         beverageList = getBeverageEco();
         $("#menuItems").empty();
         $.each(beverageList, function(element){
-            // Print all beverages in list
             printBeverage(this);
         });
     });
@@ -97,22 +94,28 @@ $(document).ready(function() {
         beverageList = getBeverageKoscher();
         $("#menuItems").empty();
         $.each(beverageList, function(element){
-            // Print all beverages in list
             printBeverage(this);
         });
     });
 
-
 });
 
+
+
+// Function for switching between different tabs
 function selectTab(targetTab) {
+    // Update previous and current tabs
     prevTab = currentTab;
     currentTab = targetTab;
+
+    // Change background
     $("#menu_" + prevTab).css("background", "#555");
     $("#menu_" + targetTab).css("background", "#333");
 }
 
+// Function for printing a menu entry
 function printBeverage(entry) {
+    // Append a new div containing beverage info
     $("#menuItems").append(
         '<div class="beverage">' +
         '<b>' + entry[0] + '</b>'+

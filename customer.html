@@ -22,15 +22,15 @@
     <script type="text/javascript" src="js/customer.js"></script>
 
 </head>
-
 <body>
 
 <div id="header">
     <div id="title">
     </div>
 
+    <!-- Login Info -->
     <div id="loginZone">
-        <form name="loginCredentials" action="javascript: void(0);">
+        <form id="loginForm" name="loginCredentials" action="javascript: void(0);">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
 
@@ -41,11 +41,13 @@
 
     </div>
 
+    <!-- Language Toggle -->
     <div id="lang">
         <img id="flag" src="" onclick="change_lang()"/>
     </div>
 </div>
 
+<!-- Menu tab header -->
 <ul id="menuTabs">
     <li id="menu_all"       class="mTab"></li>
     <li id="menu_beer"      class="mTab"></li>
@@ -53,16 +55,18 @@
     <li id="menu_spirits"   class="mTab"></li>
     <li id="menu_ecologic"  class="mTab"></li>
     <li id="menu_koscher"   class="mTab"></li>
-    <!-- Specials should only be visible to VIP:s 
-        <li id="menu_specials"  class="mTab"></li> 
-    -->
+    <!-- Specials are only visible to vip and above -->
 </ul>
 
+<!-- Beverage menu -->
 <div id="menu">
+
+    <!-- Beverage list container -->
     <div id="menuItems">
         <!-- Drinks load here -->
     </div>
 
+    <!-- Checkout zone -->
     <div id="checkout">
         <h3 id="checkout_text">
 
