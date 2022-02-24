@@ -39,6 +39,7 @@ function doLogin(form) {
 
                 // Redirect the user depending on their credentials 
                 loginContent(localStorage.getItem('credentials'));
+                update_view();
             } else {
 
                 // Username correct, password wrong
@@ -71,30 +72,42 @@ function doLogin(form) {
     if (clearance == 0) {
         $("#loginForm").hide();
         
-        $("#loginZone").append(
-            '<div id="loggedIn">' + '<div id="loginMessage"></div>' +
-            '<b>' + localStorage.getItem('userdetails').split(",")[2] + '</b>' +
-            '<p>Credits: ' + localStorage.getItem('userdetails').split(",")[5] + '</p>' +
-            '</div>'
-        );
-
-        $("#menuTabs").append(
-            '<li id="menu_specials"  class="mTab"></li>'
-        );
-
-        $("#menu_specials").click(function(){
-            selectTab("specials");
-            currentTab = "specials";
-            beverageList = getBeverageType('Sake');
-            $("#menuItems").empty();
-            $.each(beverageList, function(element){
-                printBeverage(this);
-            });
-        });
+        if (document.getElementById('loggedIn') === null){
+            $("#loginZone").append(
+                '<div id="loggedIn">' + '<div id="loginMessage"></div>' +
+                '<b>' + localStorage.getItem('userdetails').split(",")[2] + '</b>' +
+                '<br><b>Credits: ' + localStorage.getItem('userdetails').split(",")[5] + '</b>' +
+                '<br><input type="submit" id="logout" name="logout" value="Log out" onClick="doLogout()">' +
+                '</div>'
+            );
+        }
+        
+        if (document.getElementById('menu_specials') === null){
+            $("#menuTabs").append(
+                '<li id="menu_specials"  class="mTab"></li>'
+            );
             
-        update_view();
+
+            $("#menu_specials").click(function(){
+                selectTab("specials");
+                currentTab = "specials";
+                beverageList = getBeverageType('Sake');
+                $("#menuItems").empty();
+                $.each(beverageList, function(element){
+                    printBeverage(this);
+                });
+            });
+        }
     }
 }
 
-// Function to redirect user depending on clearance level.
-// May be replaced with non-redirecting functionality that just keeps track of the clearance instead.
+// Upon logout, remove all user info "reset" the page.
+function doLogout() {
+    localStorage.setItem('userdetails', null);
+    localStorage.setItem('credentials', 4);
+    $("#loggedIn").remove();
+    $("#loginForm").show();
+    document.getElementById("loginForm").reset();
+    $("#menu_specials").remove();
+    update_view();
+}

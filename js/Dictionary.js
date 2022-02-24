@@ -5,7 +5,7 @@ var language = 'en'
 
 dict = {
     'keys' : ['title', 'langtext', 'menu_all', 'menu_beer', 'menu_wine', 'menu_spirits',
-                'menu_ecologic', 'menu_koscher', 'menu_specials', 'checkout_text', 'loginMessage'], // string keys
+                'menu_ecologic', 'menu_koscher', 'menu_specials', 'shoppingCart_text', 'loginMessage', 'undoButton', 'redoButton'], // string keys
     'pics' : ['flag'],           // picture keys
 
     // English dictionary
@@ -19,8 +19,10 @@ dict = {
         "menu_ecologic": "Eco",
         "menu_koscher": "Koscher",
         "menu_specials": "Specials",
-        "checkout_text": "Checkout",
-        "loginMessage": "Welcome, "
+        "shoppingCart_text": "Shopping Cart",
+        "loginMessage": "Welcome, ",
+        "undoButton": "Undo",
+        "redoButton": "Redo"
 
     },
 
@@ -35,8 +37,10 @@ dict = {
         "menu_ecologic": "Eko",
         "menu_koscher": "Koscher",
         "menu_specials": "Specialare",
-        "checkout_text": "Kundvagn",
-        "loginMessage": "Välkommen, "
+        "shoppingCart_text": "Kundvagn",
+        "loginMessage": "Välkommen, ",
+        "undoButton": "Ångra",
+        "redoButton": "O-ångra"
 
     },
 }
