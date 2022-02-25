@@ -74,15 +74,18 @@
             <div id="redoButton"></div>
         </div>
 
-
-        <!-- Still need to fix these-->
+        <!-- Selected items should contain all selected items-->
         <div id="selectedItems"></div>
         
-        <div id="checkoutZone">
-            <div id="tableNumber"></div>
-            <div id="paymentMethod"></div>
-            <div id="paymentButton"></div>
-        </div>
+        <form id="checkoutZone">
+            <div id="tableNumberText"></div>
+            <input id="tableNumber" type="number" min="1" max="99"></input>
+            <select id="paymentMethod" name="paymentMethod">
+                <option id="payBar" value="payBar"></option>
+                <option id="payTable" value="payTable"></option>
+            </select>
+            <input id="paymentButton" type="submit"></input>
+        </form>
 
     </div>
 </div>

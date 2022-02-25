@@ -5,8 +5,6 @@
 // var userID = localStorage.getItem('id');
 var currentTab = "all";
 
-
-
 //Runs on website load
 $(document).ready(function() {
     selectTab("all");    // highlight the all tab
@@ -114,13 +112,15 @@ function printBeverage(entry) {
     // Append a new div containing beverage info
     $("#menuItems").append(
         '<div class="beverage">' +
-        '<div class="addBeverage onClick="addBeverage(' + entry + ')">+</div>' +
+        '<div class="addBeverage" onClick=\"addBeverage(\'' + entry[0] + '\')\">+</div>' +
         '<b>' + entry[0] + '</b>'+
         '<p class="beveragePrice">' + entry[2] + ' kr</p>' +
         '</div>'
     )
 }
 
-function addBeverage(entry) {
-    alert('(placeholder) Added ' + entry[0] + ' to the shopping cart!')
+
+// This is the function that should add stuff to the shopping cart (the "selectedItems" div)
+function addBeverage(bevName) {
+    alert('Added ' + bevName + ' to the shopping cart!')
 }

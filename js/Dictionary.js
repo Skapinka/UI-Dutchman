@@ -5,7 +5,9 @@ var language = 'en'
 
 dict = {
     'keys' : ['title', 'langtext', 'menu_all', 'menu_beer', 'menu_wine', 'menu_spirits',
-                'menu_ecologic', 'menu_koscher', 'menu_specials', 'shoppingCart_text', 'loginMessage', 'undoButton', 'redoButton'], // string keys
+                'menu_ecologic', 'menu_koscher', 'menu_specials', 'shoppingCart_text',
+                'loginMessage', 'undoButton', 'redoButton', 'payBar', 'payTable',
+                "paymentButton", "tableNumberText"], // string keys
     'pics' : ['flag'],           // picture keys
 
     // English dictionary
@@ -22,8 +24,11 @@ dict = {
         "shoppingCart_text": "Shopping Cart",
         "loginMessage": "Welcome, ",
         "undoButton": "Undo",
-        "redoButton": "Redo"
-
+        "redoButton": "Redo",
+        "payBar": "Pay at the bar",
+        "payTable": "Pay by my table",
+        "paymentButton": "Make order",
+        "tableNumberText": "Enter table number:"
     },
 
     // Swedish dictionary
@@ -40,8 +45,11 @@ dict = {
         "shoppingCart_text": "Kundvagn",
         "loginMessage": "Välkommen, ",
         "undoButton": "Ångra",
-        "redoButton": "O-ångra"
-
+        "redoButton": "O-ångra",
+        "payBar": "Betala i baren",
+        "payTable": "Betala vid bordet",
+        "paymentButton": "Beställ",
+        "tableNumberText": "Välj bordsnummer:"
     },
 }
 
