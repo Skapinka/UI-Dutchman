@@ -51,6 +51,27 @@ dict = {
         "paymentButton": "Beställ",
         "tableNumberText": "Välj bordsnummer:"
     },
+
+    //German dictionary
+    'du': {
+      'title': "Der fliegende Holländer",
+      'flag': "img/du.png",
+      "menu_all": "Alle",
+      "menu_beer": "Bier",
+      "menu_wine": "Wein",
+      "menu_spirits": "Spirituosen",
+      "menu_ecologic": "Öko",
+      "menu_koscher": "Koscher",
+      "menu_specials": "Speziell",
+      "shoppingCart_text": "Einkaufswagen",
+      "loginMessage": "Willkommen, ",
+      "undoButton": "Umkehren",
+      "redoButton": "Wiederholen",
+      "payBar": "Bezahlen Sie an der Bar",
+      "payTable": "Zahlen Sie an meinem Tisch",
+      "paymentButton": "Bestellen",
+      "tableNumberText": "Tischnummer eingeben:"
+    },
 }
 
 // A function which will return the corresponding text to any key,
@@ -60,9 +81,17 @@ function get_string(key) {
 }
 
 // A function to toggle between english and swedish
+// function change_lang() {
+//     if (language=='en') {
+//         language = 'sv';
+//     } else {language = 'en'};
+//     update_view();
+// }
+
 function change_lang() {
     if (language=='en') {
         language = 'sv';
-    } else {language = 'en'};
+    } else if(language=='sv'){language = 'du'}
+    else {language = 'en'}
     update_view();
 }
