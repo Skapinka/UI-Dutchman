@@ -111,6 +111,8 @@ function getBalance(userName) {
 // Returns a list of all the names of the beverages in the database. This function can be used as a
 // recipe for similar functions.
 //
+
+
 function allBeverages() {
 
     // Using a local variable to collect the items.
@@ -120,7 +122,7 @@ function allBeverages() {
     // items, you may introduce filter functions in the loop... see the template within comments.
     //
     for (i = 0; i < DB2.spirits.length; i++) {
-        collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+        collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
     };
     //
     return collector;
@@ -133,7 +135,7 @@ function getBeverageType(type) {
 
     for (i = 0; i < DB2.spirits.length; i++) {
         if (DB2.spirits[i].varugrupp == type){
-            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
         }
     };
 
@@ -146,7 +148,7 @@ function getBeverageEco() {
 
     for (i = 0; i < DB2.spirits.length; i++) {
         if (DB2.spirits[i].ekologisk == 1){
-            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
         }
     };
 
@@ -159,7 +161,7 @@ function getBeverageKoscher() {
 
     for (i = 0; i < DB2.spirits.length; i++) {
         if (DB2.spirits[i].koscher == 1){
-            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
         }
     };
 
@@ -188,7 +190,7 @@ function allStrongBeverages(strength) {
 
             // The key for the beverage name is "namn", and beverage type is "varugrupp".
             //
-            collector.push([DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms]);
         };
     };
 
@@ -226,6 +228,13 @@ function addToSet(set, item) {
 function percentToNumber(percentStr) {
     return Number(percentStr.slice(0,-1));
 }
+
+// =======================================================
+// Get beverage information from beverage ID
+// Name, price
+
+
+
 
 // =====================================================================================================
 // =====================================================================================================

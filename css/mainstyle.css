@@ -176,6 +176,8 @@ input {
 #selectedItems {
     position:absolute;
     
+    overflow-y:scroll;
+
     top: 100px;
 
     background-color:#CCC;
@@ -196,6 +198,22 @@ input {
 
     margin: 5px;
     padding: 10px;
+}
+
+.beverageSelected {
+    float: left;
+    position: relative;
+    
+    background-color: #EEE;
+    width:10%;
+    min-width: 120px;
+    max-width: 220px;
+    height: 100px;
+
+    margin: 5px;
+    padding: 10px;
+
+    border: 2px solid #666;
 }
 
 .beveragePrice {
@@ -219,6 +237,23 @@ input {
     height: 30px;
 
     border-radius: 100%;
+}
+
+.removeBeverage {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    font-weight: bolder;
+    font-size: 26px;
+    text-align:center;
+
+
+    background-color: #e62315;
+    color: #FFF;
+
+    width: 30px;
+    height: 30px;
 }
 
 .mTab {
