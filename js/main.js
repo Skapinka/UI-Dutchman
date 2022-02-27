@@ -1,7 +1,20 @@
+
+
+// doInit
+function doInit(fun, entry) {
+    if (fun == 'addBeverageFun'){
+        doFunc(addBeverageFun(entry));
+    }
+    if (fun == 'removeBeverageFun'){
+        doFunc(removeBeverageFun(entry));
+    }
+
+    update_view();
+}
+
+
 // update_view runs through the website and updates the view using a simple
 // jQuery statement.
-
-// Basically just helps the dictionary
 
 function update_view() {
     keys = dict['keys'];

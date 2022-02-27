@@ -12,7 +12,6 @@ function doFunc(func) {
     func.execute();
     undoStack.push(func);
     redoStack = [];
-    update_view();
 }
 
 // Undo function
