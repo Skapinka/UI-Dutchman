@@ -1,4 +1,4 @@
-/** The main goal here is to load the menu and handle the 
+/** The main goal here is to load the menu and handle the
  * shopping cart
  */
 
@@ -122,5 +122,12 @@ function printBeverage(entry) {
 
 // This is the function that should add stuff to the shopping cart (the "selectedItems" div)
 function addBeverage(bevName) {
-    alert('Added ' + bevName + ' to the shopping cart!')
+    //alert('Added ' + bevName + ' to the shopping cart!')
+    $("#selectedItems").append(
+    '<div class="beverage">' +
+    '<b>' + bevName + '</b>'+
+    '</div>'
+    )
+
+
 }
