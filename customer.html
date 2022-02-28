@@ -22,7 +22,8 @@
     <script type="text/javascript" src="js/customer.js"></script>
     <script type="text/javascript" src="js/shoppingCart.js"></script>
     <script type="text/javascript" src="js/undomanager.js"></script>
-
+    <script type="text/javascript" src="js/dragndrop.js"></script>
+    
 </head>
 <body>
 
@@ -30,6 +31,14 @@
     <div id="title">
     </div>
 
+    <!-- ship image  -->
+    
+    <div id="ship" ondrop="drop(event)" ondragover="allowDrop(event)">
+    </div>
+
+    <div id ="ghost" ondrop="drop(event)" ondragover="allowDrop(event)">
+    </div>
+    
     <!-- Login Info -->
     <div id="loginZone">
         <form id="loginForm" name="loginCredentials" action="javascript: void(0);">
@@ -62,6 +71,7 @@
 
 <!-- Beverage menu -->
 <div id="menu">
+
     <!-- Beverage list container -->
     <div id="menuItems">
         <!-- Drinks load here -->
@@ -95,4 +105,3 @@
 </body>
 
 </html>
-

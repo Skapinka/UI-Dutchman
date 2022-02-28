@@ -28,6 +28,8 @@ function update_view() {
         pic = pics[idx];
         $("#" + pic).attr('src', get_string(pic));
     };
+    set_content(document.getElementById("ship"), shipContent);
+    set_content(document.getElementById("ghost"), ghostContent);
 }
 
 function initAll() {

@@ -2,7 +2,6 @@
     font-family: "georgia";
 }
 
-
 #header {
     width: 100%;
     height : 100px;
@@ -18,6 +17,25 @@
 
     text-align: center;
     
+    float: left;
+}
+
+#ship {
+    height: 103px;
+    width: 103px;
+    float: left;
+}
+
+#title_img {
+    margin: 7px;
+    height : 85px;
+    width: 89px;
+}
+
+#ghost {
+    border: 1px dashed black;
+    height: 103px;
+    width: 103px;
     float: left;
 }
 
@@ -56,8 +74,7 @@
     overflow-y:scroll;
     max-height:100%;
     float:left;
-    width: 80%;
-
+    max-width: 80%;
 }
 
 #shoppingCart {
