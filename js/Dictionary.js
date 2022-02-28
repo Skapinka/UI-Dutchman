@@ -28,7 +28,7 @@ dict = {
         "payBar": "Pay at the bar",
         "payTable": "Pay by my table",
         "paymentButton": "Make order",
-        "tableNumberText": "Enter table number:"
+        "tableNumberText": "Table #:"
     },
 
     // Swedish dictionary
@@ -49,7 +49,7 @@ dict = {
         "payBar": "Betala i baren",
         "payTable": "Betala vid bordet",
         "paymentButton": "Beställ",
-        "tableNumberText": "Välj bordsnummer:"
+        "tableNumberText": "Bordsnr.:"
     },
 
     //German dictionary
@@ -70,7 +70,7 @@ dict = {
       "payBar": "Bezahlen Sie an der Bar",
       "payTable": "Zahlen Sie an meinem Tisch",
       "paymentButton": "Bestellen",
-      "tableNumberText": "Tischnummer eingeben:"
+      "tableNumberText": "Tischnummer:"
     },
 }
 
@@ -91,7 +91,10 @@ function get_string(key) {
 function change_lang() {
     if (language=='en') {
         language = 'sv';
-    } else if(language=='sv'){language = 'du'}
-    else {language = 'en'}
+    } else if (language=='sv') {
+        language = 'du';
+    } else {
+        language = 'en';
+    }
     update_view();
 }

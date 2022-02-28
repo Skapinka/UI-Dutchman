@@ -108,26 +108,16 @@ function selectTab(targetTab) {
 }
 
 // Function for printing a menu entry
+// entry = [ID, Name, Type, Price]
+// BUG: Beverages with ' characters in the name do not work
+
 function printBeverage(entry) {
     // Append a new div containing beverage info
     $("#menuItems").append(
         '<div class="beverage">' +
-        '<div class="addBeverage" onClick=\"addBeverage(\'' + entry[0] + '\')\">+</div>' +
-        '<b>' + entry[0] + '</b>'+
-        '<p class="beveragePrice">' + entry[2] + ' kr</p>' +
+        '<div class="addBeverage" onClick=\"doInit(\'addBeverageFun\', ' + entry[0] + ')\">+</div>' +
+        '<b>' + entry[1] + '</b>'+
+        '<p class="beveragePrice">' + entry[3] + ' kr</p>' +
         '</div>'
     )
-}
-
-
-// This is the function that should add stuff to the shopping cart (the "selectedItems" div)
-function addBeverage(bevName) {
-    //alert('Added ' + bevName + ' to the shopping cart!')
-    $("#selectedItems").append(
-    '<div class="beverage">' +
-    '<b>' + bevName + '</b>'+
-    '</div>'
-    )
-
-
 }

@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
-    <link rel="stylesheet" type="text/css" href="css/customer.css">
+
 
     <script type="text/javascript" src="db/Beverages.js"></script>
     <script type="text/javascript" src="db/DBLoaded.js"></script>
@@ -20,6 +20,8 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/customer.js"></script>
+    <script type="text/javascript" src="js/shoppingCart.js"></script>
+    <script type="text/javascript" src="js/undomanager.js"></script>
     <script type="text/javascript" src="js/dragndrop.js"></script>
     
 </head>
@@ -80,8 +82,8 @@
         <h3 id="shoppingCart_text"></h3>
 
         <div id="undoredo">
-            <div id="undoButton"></div>
-            <div id="redoButton"></div>
+            <div id="undoButton" onclick="undoFunc()"></div>
+            <div id="redoButton" onclick="redoFunc()"></div>
         </div>
 
         <!-- Selected items should contain all selected items-->
