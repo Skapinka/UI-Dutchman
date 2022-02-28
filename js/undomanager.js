@@ -16,15 +16,23 @@ function doFunc(func) {
 
 // Undo function
 function undoFunc() {
-    funcobj = undoStack.pop();
-    funcobj.unexecute();
-    redoStack.push.apply(funcobj);
+    try {
+        funcobj = undoStack.pop();
+        funcobj.unexecute();
+        redoStack.push(funcobj);
+    } catch(err) {
+        console.log('Cannot undo what hasn\'t been done!');
+    }
 }
 
 // Redo function
 
 function redoFunc() {
-    funcobj = redoStack.pop();
-    funcobj.reexecute();
-    undoStack.push(funcobj);
+    try {
+        funcobj = redoStack.pop();
+        funcobj.reexecute();
+        undoStack.push(funcobj);
+    } catch(err) {
+        console.log('Cannot redo what hasn\'t been undone!');
+    }
 }

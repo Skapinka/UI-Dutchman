@@ -115,7 +115,7 @@ function printBeverage(entry) {
     // Append a new div containing beverage info
     $("#menuItems").append(
         '<div class="beverage">' +
-        '<div class="addBeverage" onClick=\"doInit(\'addBeverageFun\', [' + entry[0] + ', \'' + entry[1] + '\', '+ entry[3] + '])\">+</div>' +
+        '<div class="addBeverage" onClick=\"doInit(\'addBeverageFun\', ' + entry[0] + ')\">+</div>' +
         '<b>' + entry[1] + '</b>'+
         '<p class="beveragePrice">' + entry[3] + ' kr</p>' +
         '</div>'
