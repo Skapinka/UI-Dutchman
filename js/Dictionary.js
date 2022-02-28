@@ -70,7 +70,7 @@ dict = {
       "payBar": "Bezahlen Sie an der Bar",
       "payTable": "Zahlen Sie an meinem Tisch",
       "paymentButton": "Bestellen",
-      "tableNumberText": "Tischnummer:"
+      "tableNumberText": "Tischnr.:"
     },
 }
 

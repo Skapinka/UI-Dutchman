@@ -2,6 +2,10 @@
     font-family: "georgia";
 }
 
+body {
+    overflow: hidden;
+}
+
 #header {
     width: 100%;
     height : 100px;
@@ -10,7 +14,7 @@
 }
 
 #title {
-    font-size: 25px;
+    font-size: 40px;
     
     padding: 20px 0;
     margin-left: 20px;
@@ -19,6 +23,14 @@
     
     float: left;
 }
+
+@media screen and (max-width: 900px){
+    #title {
+        font-size: 25px;
+    }
+}
+
+
 
 #ship {
     height: 103px;
@@ -39,11 +51,24 @@
     float: left;
 }
 
+@media screen and (max-width: 900px){
+    #ship {
+        display:none;
+    }
+    #ghost {
+        display:none;
+    }
+}
+
 #lang {
     float: right;
 }
 
 #flag {
+    position:absolute;
+
+    right:220px;
+
     margin: 7px;
 
     height : 60px;
@@ -52,6 +77,13 @@
 
     border: 3px solid white;
 }
+
+@media screen and (max-width: 900px){
+    #flag {
+        right:120px;
+    }
+}
+
 
 #menuTabs {
     margin: 0;
@@ -66,7 +98,7 @@
     position: relative;
     background-color: #999;
     overflow:auto;
-    height:80vh;
+    height:calc(100vh - 200px);
 }
 
 #menuItems {
@@ -74,7 +106,13 @@
     overflow-y:scroll;
     max-height:100%;
     float:left;
-    max-width: 80%;
+    width: calc(100% - 300px);
+}
+
+@media screen and (max-width: 900px){
+    #menuItems {
+        width: calc(100% - 200px);
+    }
 }
 
 #shoppingCart {
@@ -82,7 +120,7 @@
     position:relative;
     background-color: #777;
 
-    width:20%;
+    width:300px;
     height:100%;
 }
 
@@ -92,7 +130,8 @@
 }
 
 #loginZone {
-    float: right;
+    position:absolute;
+    right:0px;
 
     background : #CCC;
 
@@ -100,16 +139,15 @@
     width : 200px;
 }
 
-input {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
+@media screen and (max-width: 900px){
+    #loginZone {
+        width:100px;
+    }
 }
 
 #undoButton {
     position:absolute;
-    left:0;
-    margin-right:5px;
+    left:5px;
 
     display:inline-block;
 
@@ -118,7 +156,7 @@ input {
     background-color: #AAA;
 
     height: 30px;
-    width: 48%;
+    width: calc(50% - 10px);
 
     font-size: 18px;
     text-align: center;
@@ -126,8 +164,7 @@ input {
 
 #redoButton {
     position:absolute;
-    right:0;
-    margin-left:5px;
+    right:5px;
 
     display:inline-block;
 
@@ -136,11 +173,13 @@ input {
     background-color: #AAA;
 
     height: 30px;
-    width: 48%;
+    width: calc(50% - 10px);
 
     font-size: 18px;
     text-align: center;
 }
+
+
 
 #checkoutZone {
     position: absolute;
@@ -152,30 +191,30 @@ input {
 
     width:100%;
 }
-
-#tableNumber {
-    position:absolute;
-    top:0px;
-    right: 160px;
-
-    width: 50px;
-}
-
 #paymentMethod {
     position:absolute;
     right:10px;
-    top: 10px;
+    top: 8px;
 
     width: 150px;
 }
 
 #paymentButton {
     position:absolute;
-    bottom:10px;
-    right:0px;
+    bottom:8px;
+    right:10px;
 
     width: 150px;
 }
+
+#tableNumber {
+    position:absolute;
+    top:8px;
+    left:70px;
+
+    width: 50px;
+}
+
 
 #tableNumberText {
     position:absolute;
@@ -190,6 +229,31 @@ input {
     min-width: 70px;
 }
 
+@media screen and (max-width: 900px){
+    #paymentMethod {
+        width: 100px;
+    }
+    
+    #paymentButton {
+        width: 100px;
+    }
+
+    #shoppingCart {
+        display:inline-block;
+        position:relative;
+        background-color: #777;
+    
+        width:200px;
+        height:100%;
+    }
+    
+    #tableNumber {
+        top:unset;
+        bottom:8px;
+        left:10px;
+    }
+}
+
 #selectedItems {
     position:absolute;
     
@@ -201,6 +265,19 @@ input {
 
     width: 100%;
     height: calc(100% - 180px);
+}
+
+.loginDetails {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 170px;
+}
+
+@media screen and (max-width: 900px){
+    .loginDetails{
+        width: calc(75px);
+    }
 }
 
 .beverage {
@@ -222,15 +299,32 @@ input {
     position: relative;
     
     background-color: #EEE;
-    width:10%;
-    min-width: 120px;
-    max-width: 220px;
+    width:calc(50% - 40px);
     height: 100px;
 
     margin: 5px;
     padding: 10px;
 
     border: 2px solid #666;
+}
+
+@media screen and (max-width: 900px){
+    .beverage{
+        min-width:unset;
+        max-width:unset;
+        width: calc(100% - 40px);
+        height: 60px;
+    }
+
+    .beverageSelected {
+        width:calc(100% - 40px);
+        height: 60px;
+    
+        margin: 5px;
+        padding: 10px;
+    
+        border: 2px solid #666;
+    }
 }
 
 .beveragePrice {
@@ -254,6 +348,17 @@ input {
     height: 30px;
 
     border-radius: 100%;
+}
+
+@media screen and (max-width: 900px){
+    .addBeverage{
+        font-size: 35px;
+
+        bottom:20px;
+
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .removeBeverage {
