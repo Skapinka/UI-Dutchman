@@ -33,7 +33,7 @@ dict = {
 
     // Swedish dictionary
     'sv': {
-        'title': "Den Flygande Holländaren",
+        'title': "The Flying Dutchman",
         'flag': "img/sv.png",
         "menu_all": "Alla",
         "menu_beer": "Öl",
@@ -54,7 +54,7 @@ dict = {
 
     //German dictionary
     'du': {
-      'title': "Der fliegende Holländer",
+      'title': "The Flying Dutchman",
       'flag': "img/du.png",
       "menu_all": "Alle",
       "menu_beer": "Bier",
@@ -62,13 +62,13 @@ dict = {
       "menu_spirits": "Spirituosen",
       "menu_ecologic": "Öko",
       "menu_koscher": "Koscher",
-      "menu_specials": "Speziell",
+      "menu_specials": "Spezial",
       "shoppingCart_text": "Einkaufswagen",
       "loginMessage": "Willkommen, ",
-      "undoButton": "Umkehren",
+      "undoButton": "Umkehren",  /*aufmachen?*/
       "redoButton": "Wiederholen",
-      "payBar": "Bezahlen Sie an der Bar",
-      "payTable": "Zahlen Sie an meinem Tisch",
+      "payBar": "Bezahlen an der Bar",
+      "payTable": "Zahlen an den Tisch",
       "paymentButton": "Bestellen",
       "tableNumberText": "Tischnr.:"
     },
