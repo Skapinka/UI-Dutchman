@@ -103,7 +103,7 @@ function selectTab(targetTab) {
     currentTab = targetTab;
 
     // Change background
-    $("#menu_" + prevTab).css("background", "#555");
+    $("#menu_" + prevTab).css("background",  "#564848");
     $("#menu_" + targetTab).css("background", "#333");
 }
 
