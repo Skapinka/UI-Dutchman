@@ -2,16 +2,23 @@
     font-family: "georgia";
 }
 
+body {
+    background-color: #000;
+}
+
 :root {
     --main-bg: #E3D6C7; /* #EEE;*/
-    --drinks-bg: #fefef0;
+
+    --darken-seethru: rgba(0,0,0,0.6);
     --item-bg: #d9bb92;   
     --side-bg: #E3D6C7; /*#CCC;*/
 
 
-    --dark-accent: #564848; /* #555;*/
+    --dark-accent: #453838; /* #555;*/
     --cart-header: #777; 
     --side-accent: #AAA;
+
+    --border-white: #FFF;
 }
 
 body {
@@ -19,19 +26,40 @@ body {
 }
 
 #header {
-    width: 100%;
+    position:relative;
+
     height : 100px;
 
-    background : var(--main-bg);
+    /*background : var(--main-bg);*/
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 }
+
+#headerBackground {
+    position:absolute;
+    z-index:-1;
+    background-repeat: repeat;
+
+    left:0;
+
+    height:100%;
+    width:100%;
+
+    object-fit: cover;
+}
+
 
 #title {
     font-size: 40px;
+    color: white;
+
     padding: 20px 0;
     margin-left: 20px;
     text-align: center;
+    z-index:1;
     
     float: left;
+
+    text-shadow: 0 3px 5px rgba(0,0,0,0.6);
 }
 
 @media screen and (max-width: 900px){
@@ -57,10 +85,11 @@ body {
 
 #ghost {
     /*border: 1px dashed black;*/
-    height: 103px;
-    width: 103px;
+    height: 96px;
+    width: 96px;
     float: left;
-    background: white;
+    border: 2px dotted white;
+    background-color: rgba(0,0,0,0.1);
 }
 
 @media screen and (max-width: 900px){
@@ -96,21 +125,52 @@ body {
     }
 }
 
-
 #menuTabs {
     margin: 0;
     padding: 0;
-    margin-top:5px;
+    margin-top:8px;
     overflow: hidden;
     background-color: var(--dark-accent);
     max-height:100%;
+
+    box-shadow: 0 20px 25px rgba(0,0,0,0.4);
+
+    text-shadow: 0 2px 2px rgba(0,0,0,0.6);
 }
 
 #menu {
     position: relative;
-    background-color: var(--item-bg);
+    /*background-color: var(--item-bg);*/
     overflow:auto;
-    height:calc(100vh - 200px);
+    height:calc(100vh - 182px);
+    background-size: 100px;
+}
+
+
+/* Images are given in html code, could not find a way to do it in css */
+#menuBackground {
+    z-index:-1;
+    position:absolute;
+    left:0;
+    height:100%;
+    width:calc(100% - 317px);
+    object-fit:cover;
+}
+
+@media screen and (max-width: 900px){
+    #menuBackground{
+        width: calc(100% - 217px);
+    }
+}
+
+#shoppingCartBackground {
+    position:absolute;
+    z-index:-1;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 #menuItems {
@@ -130,25 +190,39 @@ body {
 #shoppingCart {
     display:inline-block;
     position:relative;
-    background-color: var(--cart-header);
+    /*background-color: var(--cart-header);*/
 
     width:300px;
     height:100%;
 }
 
 #shoppingCart_text {
+    font-size: 20px;
+
+    text-align: center;
+
+    padding-top: 14px;
+
     color: #FFF;
-    padding-left: 20px;
+    height: 70px;
+    
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(3px);
 }
 
 #loginZone {
     position:absolute;
-    right:0px;
 
-    background : var(--side-bg);
+    right:8px;
+    top:6px;
 
-    height : 100px;
+    /*background : var(--side-bg);*/
+
+    height : 86px;
     width : 200px;
+
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(3px);
 }
 
 @media screen and (max-width: 900px){
@@ -161,37 +235,47 @@ body {
     position:absolute;
     left:5px;
 
+    color: white;
+
     display:inline-block;
 
     top: 50px;
     
-    background-color: var(--side-accent);
+    padding-top:3px;
 
-    height: 30px;
+    background-color: var(--darken-seethru);
+
+    height: 25px;
     width: calc(50% - 10px);
 
     font-size: 18px;
     text-align: center;
+
+    border-radius: 5px;
 }
 
 #redoButton {
     position:absolute;
     right:5px;
 
+    color: white;
+
     display:inline-block;
 
     top: 50px;
-    
-    background-color: var(--side-accent);
 
-    height: 30px;
+    padding-top:3px;
+    
+    background-color: var(--darken-seethru);
+
+    height: 25px;
     width: calc(50% - 10px);
 
     font-size: 18px;
     text-align: center;
+
+    border-radius: 5px;
 }
-
-
 
 #checkoutZone {
     position: absolute;
@@ -202,6 +286,9 @@ body {
     height:60px;
 
     width:100%;
+
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(3px);
 }
 #paymentMethod {
     position:absolute;
@@ -239,6 +326,8 @@ body {
 
     max-width: 130px;
     min-width: 70px;
+
+    color: white;
 }
 
 @media screen and (max-width: 900px){
@@ -253,7 +342,6 @@ body {
     #shoppingCart {
         display:inline-block;
         position:relative;
-        background-color: var(--cart-header);
     
         width:200px;
         height:100%;
@@ -271,32 +359,33 @@ body {
     
     overflow-y:scroll;
 
-    top: 100px;
+    top: 84px;
 
-    background-color: var(--side-bg);
+    /*background-color: var(--side-bg);*/
 
     width: 100%;
-    height: calc(100% - 180px);
+    height: calc(100% - 143px);
 }
 
 .loginDetails {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    width: 170px;
-}
+    margin-top: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
 
-@media screen and (max-width: 900px){
-    .loginDetails{
-        width: calc(75px);
-    }
+    width: calc(100% - 16px);
+
 }
 
 .beverage {
     float: left;
     position: relative;
+
+    color: #FFF;
     
-    background-color: var(--drinks-bg);
+    background-color: var(--darken-seethru);
+    background: var(--darken-seethru);
+
+
     width:10%;
     min-width: 120px;
     max-width: 220px;
@@ -306,20 +395,26 @@ body {
     padding: 15px;
 
     border-radius: 15px;
+
+    backdrop-filter: blur(3px);
 }
 
 .beverageSelected {
     float: left;
     position: relative;
-    
-    background-color: var(--drinks-bg);
+
     width:calc(50% - 40px);
     height: 100px;
 
     margin: 5px;
     padding: 10px;
 
-    border: 2px solid var(--dark-accent);
+    backdrop-filter: blur(3px);
+
+
+    border-radius: 5px;
+
+    border: 1px solid var(--dark-accent);
 }
 
 @media screen and (max-width: 900px){
@@ -344,8 +439,6 @@ body {
         height:unset;
         min-height:60px;
         max-height:100px;
-    
-        border: 2px solid var(--dark-accent);
     }
 
     .selectedBeverageName {
