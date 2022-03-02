@@ -108,8 +108,7 @@ function selectTab(targetTab) {
 }
 
 // Function for printing a menu entry
-// entry = [ID, Name, Type, Price]
-// BUG: Beverages with ' characters in the name do not work
+// entry = [ID, Name, Type, Price, %alc]
 
 function printBeverage(entry) {
     // Append a new div containing beverage info
@@ -117,6 +116,7 @@ function printBeverage(entry) {
         '<div class="beverage">' +
         '<div class="addBeverage" onClick=\"doInit(\'addBeverageFun\', ' + entry[0] + ')\">+</div>' +
         '<b>' + entry[1] + '</b>'+
+        '<br><i>' + entry[4] + '</i>' + 
         '<p class="beveragePrice">' + entry[3] + ' kr</p>' +
         '</div>'
     )
