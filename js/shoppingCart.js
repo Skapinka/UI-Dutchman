@@ -90,7 +90,7 @@ function renderCart(shoppingCart) {
             '<div class="beverageSelected">' +
             '<div class="removeBeverage" onClick=\"doInit(\'removeBeverageFun\', shoppingCart['+i+'][0])">-</div>' +
             '<i>' + amnt + 'x </i>'+
-            '<b>' + name + '</b>'+
+            '<span class="selectedBeverageName"><b>' + name + '</b></span>'+
             '<br><i>' + tot + ' kr</i>'+
             '</div>'
         );

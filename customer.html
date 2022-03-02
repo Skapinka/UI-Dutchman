@@ -28,6 +28,9 @@
 <body>
 
 <div id="header">
+    <img id="headerBackground" src="img/horizplank.jpg"/>
+
+
     <div id="title">
     </div>
 
@@ -56,6 +59,7 @@
     <div id="lang">
         <img id="flag" src="" onclick="change_lang()"/>
     </div>
+
 </div>
 
 <!-- Menu tab header -->
@@ -71,32 +75,37 @@
 
 <!-- Beverage menu -->
 <div id="menu">
-
+    <img id="menuBackground" src="img/ocean.jpg"/>
     <!-- Beverage list container -->
-    <div id="menuItems">
+    
+    <div id="menuItems" >
         <!-- Drinks load here -->
     </div>
 
     <!-- Shopping cart zone, right side of the menu-->
     <div id="shoppingCart">
-        <h3 id="shoppingCart_text"></h3>
+        <div id="shoppingCart_text"></div>
+
+        <img id="shoppingCartBackground" src="img/paper.jpg"/>
+        <!-- Selected items should contain all selected items-->
+        <div id="selectedItems">
+        </div>
+        
+        
 
         <div id="undoredo">
             <div id="undoButton" onclick="undoFunc()"></div>
             <div id="redoButton" onclick="redoFunc()"></div>
         </div>
 
-        <!-- Selected items should contain all selected items-->
-        <div id="selectedItems"></div>
-        
-        <form id="checkoutZone">
+        <form id="checkoutZone" action="javascript: void(0);">
             <div id="tableNumberText"></div>
             <input id="tableNumber" type="number" min="1" max="99"></input>
             <select id="paymentMethod" name="paymentMethod">
                 <option id="payBar" value="payBar"></option>
                 <option id="payTable" value="payTable"></option>
             </select>
-            <input id="paymentButton" type="submit"></input>
+            <input id="paymentButton" type="submit" ></input>
         </form>
 
     </div>
