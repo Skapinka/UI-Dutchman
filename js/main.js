@@ -38,7 +38,7 @@ function initAll() {
     currentTab = "all";
 
     // Update the list of beverages (placeholder for 'all')
-    beverageList = allStrongBeverages(60);
+    beverageList = allBeverages();
 
     // Empty the beverage menu div
     $("#menuItems").empty();
@@ -51,7 +51,6 @@ function initAll() {
 
 // Do the first update once the website is ready loading.
 $(document).ready(function() {
-    
     initAll();
 
     update_view();
