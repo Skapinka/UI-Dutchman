@@ -122,7 +122,9 @@ function allBeverages() {
     // items, you may introduce filter functions in the loop... see the template within comments.
     //
     for (i = 0; i < DB2.spirits.length; i++) {
-        collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt]);
+	if (DB2.spirits[i].special == 0){
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
+	};
     };
     //
     return collector;
@@ -134,8 +136,8 @@ function getBeverageType(type) {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-        if (DB2.spirits[i].varugrupp == type){
-            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt]);
+        if (DB2.spirits[i].varugrupp == type && DB2.spirits[i].special == 0){
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp,  DB2.spirits[i].ursprunglandnamn]);
         }
     };
 
@@ -147,8 +149,8 @@ function getBeverageEco() {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-        if (DB2.spirits[i].ekologisk == 1){
-            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt]);
+        if (DB2.spirits[i].ekologisk == 1 && DB2.spirits[i].special == 0){
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
         }
     };
 
@@ -160,13 +162,41 @@ function getBeverageKoscher() {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-        if (DB2.spirits[i].koscher == 1){
-            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt]);
-        }
+        if (DB2.spirits[i].koscher == 1 && DB2.spirits[i].special == 0){
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
+        };
     };
 
     return collector;
 }
+
+
+// get all special beverages
+function getBeverageSpecial() {
+    var collector = [];
+
+    for (i = 0; i < DB2.spirits.length; i++) {
+	if (DB2.spirits[i].special == 1){
+	    collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
+        };
+    };
+
+    return collector;
+}
+
+
+function getBeverageGlutenFree() {
+    var collector = [];
+
+    for (i = 0; i < DB2.spirits.length; i++) {
+	if(DB2.spirits[i].glutenfri == 1) {
+	    collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
+        };
+	
+    };
+    return collector;
+}
+
 
 // =====================================================================================================
 // This function returns the names of all strong beverages (i.e. all that contain a percentage of alcohol
@@ -186,11 +216,11 @@ function allStrongBeverages(strength) {
         // We check if the percentage alcohol strength stored in the data base is lower than the
         // given limit strength. If the limit is set to 14, also liqueuers are listed.
         //
-        if (percentToNumber(DB2.spirits[i].alkoholhalt) > strength) {
+        if (percentToNumber(DB2.spirits[i].alkoholhalt) > strength && DB2.spirits[i].special == 0) {
 
             // The key for the beverage name is "namn", and beverage type is "varugrupp".
             //
-            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt]);
+            collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
         };
     };
 

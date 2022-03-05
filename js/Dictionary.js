@@ -5,7 +5,7 @@ var language = 'en'
 
 dict = {
     'keys' : ['title', 'langtext', 'menu_all', 'menu_beer', 'menu_wine', 'menu_spirits',
-                'menu_ecologic', 'menu_koscher', 'menu_specials', 'shoppingCart_text',
+              'menu_ecologic', 'menu_koscher', 'menu_gluten_free', 'menu_specials', 'shoppingCart_text',
                 'loginMessage', 'undoButton', 'redoButton', 'payBar', 'payTable',
                 "paymentButton", "tableNumberText"], // string keys
     'pics' : ['flag'],           // picture keys
@@ -17,9 +17,10 @@ dict = {
         "menu_all": "All",
         "menu_beer": "Beer",
         "menu_wine": "Wine",
-        "menu_spirits": "Spirits",
+        "menu_spirits": "Cocktails",
         "menu_ecologic": "Eco",
         "menu_koscher": "Koscher",
+	"menu_gluten_free": "Gluten Free",
         "menu_specials": "Specials",
         "shoppingCart_text": "Shopping Cart",
         "loginMessage": "Welcome, ",
@@ -38,9 +39,10 @@ dict = {
         "menu_all": "Alla",
         "menu_beer": "Öl",
         "menu_wine": "Vin",
-        "menu_spirits": "Sprit",
+        "menu_spirits": "Drinkar",
         "menu_ecologic": "Eko",
         "menu_koscher": "Koscher",
+	"menu_gluten_free": "Glutenfri",
         "menu_specials": "Specialare",
         "shoppingCart_text": "Kundvagn",
         "loginMessage": "Välkommen, ",
@@ -49,7 +51,7 @@ dict = {
         "payBar": "Betala i baren",
         "payTable": "Betala vid bordet",
         "paymentButton": "Beställ",
-        "tableNumberText": "Bordsnr.:"
+        "tableNumberText": "Bordsnr.:",
     },
 
     //German dictionary
@@ -59,9 +61,10 @@ dict = {
       "menu_all": "Alle",
       "menu_beer": "Bier",
       "menu_wine": "Wein",
-      "menu_spirits": "Spirituosen",
+      "menu_spirits": "Cocktails",
       "menu_ecologic": "Öko",
       "menu_koscher": "Koscher",
+      "menu_gluten_free": "Glutenfrei",
       "menu_specials": "Spezial",
       "shoppingCart_text": "Einkaufswagen",
       "loginMessage": "Willkommen, ",

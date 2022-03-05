@@ -91,7 +91,7 @@ function doLogin(form) {
             $("#menu_specials").click(function(){
                 selectTab("specials");
                 currentTab = "specials";
-                beverageList = getBeverageType('Sake');
+                beverageList = getBeverageSpecial();
                 $("#menuItems").empty();
                 $.each(beverageList, function(element){
                     printBeverage(this);

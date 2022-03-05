@@ -224,7 +224,7 @@ body {
 
     height : 86px;
     width : 200px;
-
+    color: white;
     background-color: var(--darken-seethru);
     backdrop-filter: blur(3px);
 }
@@ -234,9 +234,9 @@ body {
         width:100px;
     }
 }
+
 #login{
     cursor: pointer;
-    
 }
 
 #undoButton {
