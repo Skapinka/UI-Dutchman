@@ -29,8 +29,7 @@ dict = {
         "payBar": "Pay at the bar",
         "payTable": "Pay by my table",
         "paymentButton": "Make order",
-        "tableNumberText": "Table #:",
-	"hejhej": "heyhey"
+        "tableNumberText": "Table #:"
     },
 
     // Swedish dictionary
@@ -53,7 +52,6 @@ dict = {
         "payTable": "Betala vid bordet",
         "paymentButton": "Beställ",
         "tableNumberText": "Bordsnr.:",
-	"hejhej": "hejhej"
     },
 
     //German dictionary
