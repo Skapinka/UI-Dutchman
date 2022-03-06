@@ -7,6 +7,7 @@ var currentTab = "all";
 
 //Runs on website load
 $(document).ready(function() {
+    
     selectTab("all");    // highlight the all tab
     $('body').css("height", $(window).height()-10);
 
