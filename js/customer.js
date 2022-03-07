@@ -104,9 +104,10 @@ function selectTab(targetTab) {
     prevTab = currentTab;
     currentTab = targetTab;
 
-    // Change background
-    $("#menu_" + prevTab).css("background", "#453838");
-    $("#menu_" + targetTab).css("background", "#333");
+    // Reset the already clicked tab background,
+    // and update the newly selected one
+    $("#menu_" + prevTab).css("background-color", "");
+    $("#menu_" + targetTab).css("background-color", "#382f2f");
 }
 
 // Function for printing a menu entry

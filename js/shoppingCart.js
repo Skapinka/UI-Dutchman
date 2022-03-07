@@ -88,6 +88,7 @@ function renderCart(shoppingCart) {
         var amnt = shoppingCart[i][1];
         var name = bev[1];
         var tot = parseInt(shoppingCart[i][1])*bev[2];
+
         var priceTotal = priceTotal + tot;
 
         $("#selectedItems").append(
@@ -111,14 +112,10 @@ function renderCart(shoppingCart) {
 
 
 // Returns name and price of an item
-
-// BROKEN. For some reason using this function messes with the renderCart function, making it
-// only render a single item. I dunno
-
-// ID, name, price
+// ID, name, price, alcohol
 
 function getBevByID(ID) {
-    var bev = [ID, 'null', 0, 0];
+    var bev = [ID, 'null', 0, 0, 0];
 
     for (i = 0; i < DB2.spirits.length; i++) {
         if (DB2.spirits[i].artikelid == ID) {
@@ -126,6 +123,7 @@ function getBevByID(ID) {
             return bev;
         }
     }
+    
 
     return bev;
 }
