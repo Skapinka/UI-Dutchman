@@ -29,6 +29,7 @@ function addBeverageFun(ID) {
                     break;
                 }
             }
+            addPersonItems(0, this.bevID);
             renderCart(this.cart);
         },
 
@@ -58,6 +59,7 @@ function removeBeverageFun(ID) {
                     }
                 }
             }
+            removePersonItems(this.bevID);
             renderCart(this.cart);
         },
 
@@ -77,6 +79,7 @@ function removeBeverageFun(ID) {
 // Clear area, then loop through 'shoppingCart' and display each item 
 function renderCart(shoppingCart) {
     $("#selectedItems").empty();
+    var priceTotal = 0;
 
     for (var i = 0; i < shoppingCart.length; i++) {
 
@@ -85,7 +88,9 @@ function renderCart(shoppingCart) {
         var amnt = shoppingCart[i][1];
         var name = bev[1];
         var tot = parseInt(shoppingCart[i][1])*bev[2];
-        
+
+        var priceTotal = priceTotal + tot;
+
         $("#selectedItems").append(
             '<div class="beverageSelected">' +
             '<div class="removeBeverage" onClick=\"doInit(\'removeBeverageFun\', shoppingCart['+i+'][0])">-</div>' +
@@ -95,21 +100,22 @@ function renderCart(shoppingCart) {
             '</div>'
         );
     }
-    update_view();
+    document.getElementById("priceTotal").innerHTML = priceTotal + ' kr';
     
+    renderCheckout(shoppingCart);
+    update_view();
+
     return shoppingCart.length;
 }
 
 
+
+
 // Returns name and price of an item
-
-// BROKEN. For some reason using this function messes with the renderCart function, making it
-// only render a single item. I dunno
-
-// ID, name, price
+// ID, name, price, alcohol
 
 function getBevByID(ID) {
-    var bev = [ID, 'null', 0, 0];
+    var bev = [ID, 'null', 0, 0, 0];
 
     for (i = 0; i < DB2.spirits.length; i++) {
         if (DB2.spirits[i].artikelid == ID) {
@@ -117,6 +123,7 @@ function getBevByID(ID) {
             return bev;
         }
     }
+    
 
     return bev;
 }
