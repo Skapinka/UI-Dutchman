@@ -8,7 +8,8 @@ dict = {
               'menu_ecologic', 'menu_koscher', 'menu_gluten_free', 'menu_specials', 'shoppingCart_text',
                 'loginMessage', 'undoButton', 'redoButton', 'payBar', 'payTable',
                 "paymentButton", "tableNumberText", "proceedCheckout", "priceTotalTxt", "proceedPayment",
-                "newPerson", "paymentMethodText"], // string keys
+                "newPerson", "paymentMethodText", "paymentCreditsText", "buyNotificationTitle", "payCreditsNotificationTitle" ,
+                "payCreditsNotificationText", "clickNotificationText", "clickNotificationText1", "clickNotificationText2", "noCreditsNotificationTitle"], // string keys
     'pics' : ['flag'],           // picture keys
 
     // English dictionary
@@ -21,7 +22,7 @@ dict = {
         "menu_spirits": "Cocktails",
         "menu_ecologic": "Eco",
         "menu_koscher": "Koscher",
-	"menu_gluten_free": "Gluten Free",
+	    "menu_gluten_free": "Gluten Free",
         "menu_specials": "Specials",
         "shoppingCart_text": "Shopping Cart",
         "loginMessage": "Welcome, ",
@@ -35,7 +36,14 @@ dict = {
         "priceTotalTxt": "Total:",
         "proceedPayment": "Make order!",
         "newPerson": "[add person]",
-        "paymentMethodText": "Pay at my table"
+        "paymentMethodText": "Pay at my table",
+        "paymentCreditsText" : "Pay with credits",
+        "buyNotificationTitle": "Payment completed!",
+        "clickNotificationText": "Press anywhere to continue.",
+        "clickNotificationText1": "Press anywhere to continue.",
+        "clickNotificationText2": "Press anywhere to continue.",
+        "payCreditsNotificationTitle": "Order paid with credits!",
+        "noCreditsNotificationTitle": "Not enough credits."
     },
 
     // Swedish dictionary
@@ -48,7 +56,7 @@ dict = {
         "menu_spirits": "Drinkar",
         "menu_ecologic": "Eko",
         "menu_koscher": "Koscher",
-	"menu_gluten_free": "Glutenfri",
+	    "menu_gluten_free": "Glutenfri",
         "menu_specials": "Specialare",
         "shoppingCart_text": "Kundvagn",
         "loginMessage": "Välkommen, ",
@@ -62,7 +70,14 @@ dict = {
         "priceTotalTxt": "Totalt:",
         "proceedPayment": "Gör beställning!",
         "newPerson": "[ny person]",
-        "paymentMethodText": "Betala vid mitt bord"
+        "paymentMethodText": "Betala vid mitt bord",
+        "paymentCreditsText" : "Betala med credits",
+        "buyNotificationTitle": "Betalning genomförd!",
+        "clickNotificationText": "Tryck varsomhelst för att fortsätta.",
+        "clickNotificationText1": "Tryck varsomhelst för att fortsätta.",
+        "clickNotificationText2": "Tryck varsomhelst för att fortsätta.",
+        "payCreditsNotificationTitle": "Beställning betald med credits!",
+        "noCreditsNotificationTitle": "Ej tillräckligt med credits."
     },
 
     //German dictionary
@@ -89,7 +104,14 @@ dict = {
       "priceTotalTxt": "Total:",
       "proceedPayment": "Bestellen!",
       "newPerson": "[neue person]",
-      "paymentMethodText": "Bezahle an meinem Tisch"
+      "paymentMethodText": "Bezahle an meinem Tisch",
+      "paymentCreditsText" : "Mit credits bezahlen",
+      "buyNotificationTitle": "Zahlung umgesetzt!",
+      "clickNotificationText": "Drücken Sie irgendwo, um fortzufahren.",
+      "clickNotificationText1": "Drücken Sie irgendwo, um fortzufahren.",
+      "clickNotificationText2": "Drücken Sie irgendwo, um fortzufahren.",
+      "payCreditsNotificationTitle": "Bestellung mit Credits bezahlt!",
+      "noCreditsNotificationTitle": "Nicht genügend credits."
     },
 }
 

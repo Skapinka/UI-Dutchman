@@ -5,8 +5,11 @@ $(document).ready(function() {
     document.getElementById("priceTotal").innerHTML =  '0 kr';
 
     $("#proceedCheckout").click(function(){toggleCheckout();});
+    $("#proceedPayment").click(function(){doPayment();});
     $("#paymentWindowClose").click(function(){toggleCheckout();});
-    $(".checkmark").click(function(){toggleTableCheck();})
+    $("#checkmarkT").click(function(){toggleTableCheck();})
+    $("#checkmarkC").click(function(){toggleUseCredits();})
+
 });
 
 var tableToggle = false;
@@ -22,7 +25,39 @@ function toggleTableCheck() {
     return 0;
 }
 
+var creditToggle = false;
+
+function toggleUseCredits(x) {
+    if (creditToggle || (x==0)) {
+        $('#creditsCheckmark').hide();
+        creditToggle = false;
+    } else {
+        $('#creditsCheckmark').show();
+        creditToggle = true;
+    }
+    return 0;
+}
+
 var paymentToggle = false;
+
+function doPayment() {
+    // pay with credit
+    if (creditToggle && localStorage.getItem('userdetails').split(",")[5] >= currentTotal) {
+        details = localStorage.getItem('userdetails').split(",");
+        details[5] = details[5] - currentTotal;
+        localStorage.setItem('userdetails', details);
+        payCreditsNotification(true)
+        clearCart();
+    } else if (localStorage.getItem('userdetails').split(",")[5] < currentTotal) {
+        //not enough credit
+        noCreditsNotification(true);
+    } else {
+        //pay with cash
+        payNotification(true);
+        clearCart();
+    }
+    update_view();
+}
 
 function toggleCheckout() {
     console.log('Checkout button pressed');
@@ -157,9 +192,11 @@ function moveItem(person,bevID,bevindex){
 function renderCheckout(shoppingCart) {
     $("#selectedItemsCheckout").empty();
 
-    if (persons.length == 0) {
-        // First added item --> create a new person 0 
-        addPersonItems(0, shoppingCart[0][0]);
+    if (undefined !== shoppingCart){
+        if (persons.length == 0) {
+            // First added item --> create a new person 0 
+            addPersonItems(0, shoppingCart[0][0]);
+        }
     }
 
     for (var i = 0; i < persons.length; i++) {
