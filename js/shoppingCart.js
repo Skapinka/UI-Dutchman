@@ -5,6 +5,9 @@
 
 var shoppingCart = [];
 
+// total cost of order
+var currentTotal = 0;
+
 // Add a bevereage to the shopping cart
 
 
@@ -75,37 +78,52 @@ function removeBeverageFun(ID) {
     return tempFunObject
 }
 
+// Clear all of the random information associated with the shopping cart
+function clearCart() {
+    shoppingCart = [];
+    persons = [];
+    renderCart();
+    undoStack = [];
+    redoStack = [];
+    $("#selectedItemsCheckout").empty();
+    return;
+}
 
 // Clear area, then loop through 'shoppingCart' and display each item 
 function renderCart(shoppingCart) {
     $("#selectedItems").empty();
     var priceTotal = 0;
 
-    for (var i = 0; i < shoppingCart.length; i++) {
+    // First check that shoppingCart exists (important when clearing)
+    if (undefined !== shoppingCart){
+        for (var i = 0; i < shoppingCart.length; i++) {
 
-        // ID, name, price
-        var bev = getBevByID(shoppingCart[i][0]);
-        var amnt = shoppingCart[i][1];
-        var name = bev[1];
-        var tot = parseInt(shoppingCart[i][1])*bev[2];
+            // ID, name, price
+            var bev = getBevByID(shoppingCart[i][0]);
+            var amnt = shoppingCart[i][1];
+            var name = bev[1];
+            var tot = parseInt(shoppingCart[i][1])*bev[2];
 
-        var priceTotal = priceTotal + tot;
-
-        $("#selectedItems").append(
-            '<div class="beverageSelected">' +
-            '<div class="removeBeverage" onClick=\"doInit(\'removeBeverageFun\', shoppingCart['+i+'][0])">-</div>' +
-            '<i>' + amnt + 'x </i>'+
-            '<span class="selectedBeverageName"><b>' + name + '</b></span>'+
-            '<br><i>' + tot + ' kr</i>'+
-            '</div>'
-        );
+            var priceTotal = priceTotal + tot;
+            
+            //Create entries for the selected beverages
+            $("#selectedItems").append(
+                '<div class="beverageSelected">' +
+                '<div class="removeBeverage" onClick=\"doInit(\'removeBeverageFun\', shoppingCart['+i+'][0])">-</div>' +
+                '<i>' + amnt + 'x </i>'+
+                '<span class="selectedBeverageName"><b>' + name + '</b></span>'+
+                '<br><i>' + tot + ' kr</i>'+
+                '</div>'
+            );
+        }
     }
+
     document.getElementById("priceTotal").innerHTML = priceTotal + ' kr';
-    
+    currentTotal = priceTotal;
+
     renderCheckout(shoppingCart);
     update_view();
-
-    return shoppingCart.length;
+    return 0;
 }
 
 

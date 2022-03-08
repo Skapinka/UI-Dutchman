@@ -29,8 +29,9 @@ function doLogin(form) {
 
                 // If the username and password match, proceed with the login
                 user = this;
-                $.each(this, function(element) {
 
+                $.each(this, function(element) {
+                
                     // Store user details on local memory
                     localStorage.setItem('userdetails', userDetails(user.username));
                     localStorage.setItem('credentials', user.credentials);
@@ -39,11 +40,13 @@ function doLogin(form) {
 
                 // Redirect the user depending on their credentials
                 loginContent(localStorage.getItem('credentials'));
+                $('#paymentCredits').show();
+                //loginContent(localStorage.getItem('credentials'));
                 update_view();
             } else {
 
                 // Username correct, password wrong
-                alert("Wrong password and/or username!");
+                console.log("Wrong password and/or username!");
                 return false;
             }
             return false;
@@ -51,7 +54,7 @@ function doLogin(form) {
 
         // Username not in database
         if (index+1 == db.length) {
-            alert("Wrong password and/or username!");
+            console.log("Wrong password and/or username!");
         }
     });
 }
@@ -71,10 +74,10 @@ function doLogin(form) {
     // VIP LOGIN CONTENT
     if (clearance == 0) {
         $("#loginForm").hide();
-
+        $("#loggedIn").remove();
         if (document.getElementById('loggedIn') === null){
             $("#loginZone").append(
-                '<div id="loggedIn">' + '<div id="loginMessage"></div>' +
+                '<div id="loggedIn">' + '<span id="loginMessage"></span>' +
                 '<b>' + localStorage.getItem('userdetails').split(",")[2] + '</b>' +
                 '<br><b>Credits: ' + localStorage.getItem('userdetails').split(",")[5] + '</b>' +
                 '<br><input type="submit" id="logout" name="logout" value="Log out" onClick="doLogout()">' +
@@ -109,5 +112,18 @@ function doLogout() {
     $("#loginForm").show();
     document.getElementById("loginForm").reset();
     $("#menu_specials").remove();
+    $('#paymentCredits').hide();
+    if (creditToggle){toggleUseCredits();}
+    
+    // This should really be done by a function, my apologies
+    if (currentTab == "specials"){
+        selectTab("all"); 
+        currentTab = "all";
+        beverageList = allBeverages();
+        $("#menuItems").empty();
+        $.each(beverageList, function(element){printBeverage(this);});    
+    }
+
+    clearCart();
     update_view();
 }
