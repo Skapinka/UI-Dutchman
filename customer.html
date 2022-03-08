@@ -23,6 +23,8 @@
     <script type="text/javascript" src="js/shoppingCart.js"></script>
     <script type="text/javascript" src="js/undomanager.js"></script>
     <script type="text/javascript" src="js/dragndrop.js"></script>
+    <script type="text/javascript" src="js/checkout.js"></script>
+
     
 </head>
 <body>
@@ -88,6 +90,7 @@
         <div id="shoppingCart_text"></div>
 
         <img id="shoppingCartBackground" src="img/paper.jpg"/>
+        
         <!-- Selected items should contain all selected items-->
         <div id="selectedItems">
         </div>
@@ -99,15 +102,31 @@
             <div id="redoButton" onclick="redoFunc()"></div>
         </div>
 
-        <form id="checkoutZone" action="javascript: void(0);">
-            <div id="tableNumberText"></div>
-            <input id="tableNumber" type="number" min="1" max="99"></input>
-            <select id="paymentMethod" name="paymentMethod">
-                <option id="payBar" value="payBar"></option>
-                <option id="payTable" value="payTable"></option>
-            </select>
-            <input id="paymentButton" type="submit" ></input>
-        </form>
+
+        <div id="paymentWindow">
+            <div id="paymentWindowClose">x</div>
+            
+            <!--  -->
+            <div id="selectedItemsCheckout">
+            </div>
+
+            <span id="priceTotalTxt"></span>
+            <span id="priceTotal"></span>
+
+            <div id="paymentMethod">
+                <span class="checkmark">
+                    <span id="tableCheckmark">x</span>
+                </span>
+                <span id="paymentMethodText">
+            </div>
+        </div>
+
+        <div id="proceedCheckoutContainer">
+            <div id="proceedCheckout"></div>
+            <div id="proceedPayment"></div>
+        </div>
+
+
 
     </div>
 </div>

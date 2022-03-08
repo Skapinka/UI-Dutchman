@@ -7,7 +7,8 @@ dict = {
     'keys' : ['title', 'langtext', 'menu_all', 'menu_beer', 'menu_wine', 'menu_spirits',
               'menu_ecologic', 'menu_koscher', 'menu_gluten_free', 'menu_specials', 'shoppingCart_text',
                 'loginMessage', 'undoButton', 'redoButton', 'payBar', 'payTable',
-                "paymentButton", "tableNumberText"], // string keys
+                "paymentButton", "tableNumberText", "proceedCheckout", "priceTotalTxt", "proceedPayment",
+                "newPerson", "paymentMethodText"], // string keys
     'pics' : ['flag'],           // picture keys
 
     // English dictionary
@@ -29,7 +30,12 @@ dict = {
         "payBar": "Pay at the bar",
         "payTable": "Pay by my table",
         "paymentButton": "Make order",
-        "tableNumberText": "Table #:"
+        "tableNumberText": "Table #:",
+        "proceedCheckout": "Proceed to checkout",
+        "priceTotalTxt": "Total:",
+        "proceedPayment": "Make order!",
+        "newPerson": "[add person]",
+        "paymentMethodText": "Pay at my table"
     },
 
     // Swedish dictionary
@@ -52,6 +58,11 @@ dict = {
         "payTable": "Betala vid bordet",
         "paymentButton": "Beställ",
         "tableNumberText": "Bordsnr.:",
+        "proceedCheckout": "Fortsätt till betalning",
+        "priceTotalTxt": "Totalt:",
+        "proceedPayment": "Gör beställning!",
+        "newPerson": "[ny person]",
+        "paymentMethodText": "Betala vid mitt bord"
     },
 
     //German dictionary
@@ -73,7 +84,12 @@ dict = {
       "payBar": "Bezahlen an der Bar",
       "payTable": "Zahlen an den Tisch",
       "paymentButton": "Bestellen",
-      "tableNumberText": "Tischnr.:"
+      "tableNumberText": "Tischnr.:",
+      "proceedCheckout": "Weiter zur Zahlung",
+      "priceTotalTxt": "Total:",
+      "proceedPayment": "Bestellen!",
+      "newPerson": "[neue person]",
+      "paymentMethodText": "Bezahle an meinem Tisch"
     },
 }
 
@@ -83,13 +99,6 @@ function get_string(key) {
     return dict[language][key]
 }
 
-// A function to toggle between english and swedish
-// function change_lang() {
-//     if (language=='en') {
-//         language = 'sv';
-//     } else {language = 'en'};
-//     update_view();
-// }
 
 function change_lang() {
     if (language=='en') {
