@@ -14,10 +14,10 @@ function doLogin(form) {
     // Get username and pass from form
     var username = form.username.value;
     var password = form.password.value;
-    
+
     // Get user database
     var db = DB.users;
-    
+
     // Run through each entry in the user database
     $.each(db, function(index, item) {
 
@@ -38,6 +38,8 @@ function doLogin(form) {
                     return false;
                 });
 
+                // Redirect the user depending on their credentials
+                loginContent(localStorage.getItem('credentials'));
                 $('#paymentCredits').show();
                 //loginContent(localStorage.getItem('credentials'));
                 update_view();
@@ -50,7 +52,7 @@ function doLogin(form) {
             return false;
         }
 
-        // Username not in database 
+        // Username not in database
         if (index+1 == db.length) {
             console.log("Wrong password and/or username!");
         }
@@ -63,16 +65,15 @@ function doLogin(form) {
  * 1 - bartender
  * 2 - waiter/waitress
  * 3 - vip customer
- * 
+ *
  * Normal customers do not log in.
  */
 
  function loginContent(clearance) {
-    
+
     // VIP LOGIN CONTENT
     if (clearance == 0) {
         $("#loginForm").hide();
-        
         $("#loggedIn").remove();
         if (document.getElementById('loggedIn') === null){
             $("#loginZone").append(
@@ -83,12 +84,12 @@ function doLogin(form) {
                 '</div>'
             );
         }
-        
+
         if (document.getElementById('menu_specials') === null){
             $("#menuTabs").append(
                 '<li id="menu_specials"  class="mTab"></li>'
             );
-            
+
 
             $("#menu_specials").click(function(){
                 selectTab("specials");

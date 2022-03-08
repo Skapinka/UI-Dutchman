@@ -1,0 +1,13 @@
+#Stock {
+    display:inline-block;
+    overflow-y:scroll;
+    max-height:100%;
+    float:left;
+    width: calc(100% - 300px);
+}
+
+@media screen and (max-width: 900px){
+    #Stock {
+        width: calc(100% - 200px);
+    }
+}

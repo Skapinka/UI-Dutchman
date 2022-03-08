@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+<body>
+    <h2>Login</h2><br>
+    <div class="login">
+    <form id="login" method="get" action="javascript: void(0);">
+        <label><center><b>User Name</b></center>
+        </label>
+        <center><input type="text" name="Uname" id="Uname" placeholder="Username"></center>
+        <br>
+        <label><center><b>Password</b></center>
+        </label>
+        <center><input type="Password" name="Pass" id="Pass" placeholder="Password"></center>
+        <br><br>
+        <center><input type="button" class="button" name="log" id="log" onClick="doLogin(loginCredentials)" value="Login"></center>
+        <br><br>
+        <center><input type="button" class="button" name="log" id="log" onClick="window.location.href='index.html'" value=" << Go Back"></center>
+        <br><br>
+    </form>
+</div>
+</body>
+</html>
