@@ -17,6 +17,8 @@ function doInit(fun, entry) {
 // jQuery statement.
 
 function update_view() {
+    loginContent(localStorage.getItem('credentials'));
+    
     keys = dict['keys'];
     for (idx in keys) {
         key = keys[idx];
@@ -28,6 +30,7 @@ function update_view() {
         pic = pics[idx];
         $("#" + pic).attr('src', get_string(pic));
     };
+
     set_content(document.getElementById("ship"), shipContent);
     set_content(document.getElementById("ghost"), ghostContent);
 }

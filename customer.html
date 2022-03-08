@@ -24,10 +24,46 @@
     <script type="text/javascript" src="js/undomanager.js"></script>
     <script type="text/javascript" src="js/dragndrop.js"></script>
     <script type="text/javascript" src="js/checkout.js"></script>
+    <script type="text/javascript" src="js/pageNotifications.js"></script>
 
     
 </head>
 <body>
+
+<!-- PURCHACE MADE -->
+<!-- This could have been made with just one window changing its text-->
+<!-- The solution with having three different 'press to continue' texts
+     displaying the same thing is absolutely disgusting and in no way proper
+     programming. I would hate to collaborate with anyone doing such a thing.
+
+
+     ...that being said, it works and it's quicker than the alternative.
+-->
+
+<div id="buyNotification">
+    <div id="buyNotificationBox">
+        <!--something like"Purchase made, clik anywhere to continue!""-->
+        <div id="buyNotificationTitle"></div>
+        <div id="clickNotificationText"></div>
+    </div>
+</div>
+<!-- PAID WITH CREDITS -->
+<div id="payCreditsNotification">
+    <div id="payCreditsNotificationBox">
+        <!--something like"Purchase made, clik anywhere to continue!""-->
+        <div id="payCreditsNotificationTitle"></div>
+        <div id="clickNotificationText1"></div>
+    </div>
+</div>
+<!-- NOT ENOUGH CREDITS -->
+<div id="noCreditsNotification">
+    <div id="noCreditsNotificationBox">
+        <!--something like"Purchase made, clik anywhere to continue!""-->
+        <div id="noCreditsNotificationTitle"></div>
+        <div id="clickNotificationText2"></div>
+    </div>
+</div>
+
 
 <div id="header">
     <img id="headerBackground" src="img/horizplank.jpg"/>
@@ -114,18 +150,25 @@
             <span id="priceTotal"></span>
 
             <div id="paymentMethod">
-                <span class="checkmark">
+                <span id="checkmarkT">
                     <span id="tableCheckmark">x</span>
                 </span>
                 <span id="paymentMethodText">
             </div>
+
+            <div id="paymentCredits">
+                <span id="checkmarkC">
+                    <span id="creditsCheckmark">x</span>
+                </span>
+                <span id="paymentCreditsText">
+            </div>
+            
         </div>
 
         <div id="proceedCheckoutContainer">
             <div id="proceedCheckout"></div>
             <div id="proceedPayment"></div>
         </div>
-
 
 
     </div>

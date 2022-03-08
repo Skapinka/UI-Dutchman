@@ -6,13 +6,16 @@
 var currentTab = "all";
 
 //Runs on website load
+
+
 $(document).ready(function() {
     
     selectTab("all");    // highlight the all tab
     $('body').css("height", $(window).height()-10);
 
-    // ALL currently loads beverages >=60% alc
-    // On click
+    // All of the following "functions" should really be handled
+    // by some 'main'-function
+
     $("#menu_all").click(function(){
         // Highlight tab
         selectTab("all");
