@@ -31,6 +31,12 @@ function update_view() {
         $("#" + pic).attr('src', get_string(pic));
     };
 
+    // sets login button and login forms to be changed based on language
+    document.getElementById("loginButton").defaultValue = get_string("loginButton");
+    document.getElementById("username").placeholder = get_string("username");
+    document.getElementById("password").placeholder = get_string("password");
+
+    // puts the image of the ship
     set_content(document.getElementById("ship"), shipContent);
     set_content(document.getElementById("ghost"), ghostContent);
 }

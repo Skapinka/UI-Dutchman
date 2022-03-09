@@ -439,14 +439,17 @@ body {
     backdrop-filter: blur(3px);
 }
 
+
 @media screen and (max-width: 900px){
     #loginZone {
         width:100px;
     }
 }
 
-#login{
+#loginButton{
     cursor: pointer;
+    width: 96%;
+
 }
 
 #loggedIn {

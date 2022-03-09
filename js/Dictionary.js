@@ -9,7 +9,7 @@ dict = {
                 'loginMessage', 'undoButton', 'redoButton', 'payBar', 'payTable',
                 "paymentButton", "tableNumberText", "proceedCheckout", "priceTotalTxt", "proceedPayment",
                 "newPerson", "paymentMethodText", "paymentCreditsText", "buyNotificationTitle", "payCreditsNotificationTitle" ,
-                "payCreditsNotificationText", "clickNotificationText", "clickNotificationText1", "clickNotificationText2", "noCreditsNotificationTitle"], // string keys
+              "payCreditsNotificationText", "clickNotificationText", "clickNotificationText1", "clickNotificationText2", "noCreditsNotificationTitle", "loginButton", "username", "password"], // string keys
     'pics' : ['flag'],           // picture keys
 
     // English dictionary
@@ -43,7 +43,10 @@ dict = {
         "clickNotificationText1": "Press anywhere to continue.",
         "clickNotificationText2": "Press anywhere to continue.",
         "payCreditsNotificationTitle": "Order paid with credits!",
-        "noCreditsNotificationTitle": "Not enough credits."
+        "noCreditsNotificationTitle": "Not enough credits.",
+	"loginButton": "Log in",
+	"username": "Username",
+	"password": "Password"
     },
 
     // Swedish dictionary
@@ -77,7 +80,10 @@ dict = {
         "clickNotificationText1": "Tryck varsomhelst för att fortsätta.",
         "clickNotificationText2": "Tryck varsomhelst för att fortsätta.",
         "payCreditsNotificationTitle": "Beställning betald med credits!",
-        "noCreditsNotificationTitle": "Ej tillräckligt med credits."
+        "noCreditsNotificationTitle": "Ej tillräckligt med credits.",
+	"loginButton": "Logga in",
+	"username": "Användarnamn",
+	"password": "Lösenord"
     },
 
     //German dictionary
@@ -109,9 +115,12 @@ dict = {
       "buyNotificationTitle": "Zahlung umgesetzt!",
       "clickNotificationText": "Drücken Sie irgendwo, um fortzufahren.",
       "clickNotificationText1": "Drücken Sie irgendwo, um fortzufahren.",
-      "clickNotificationText2": "Drücken Sie irgendwo, um fortzufahren.",
-      "payCreditsNotificationTitle": "Bestellung mit Credits bezahlt!",
-      "noCreditsNotificationTitle": "Nicht genügend credits."
+      "clickNotificationText2": "Drücken Sie irgendwo, um fortzufahren.",      "payCreditsNotificationTitle": "Bestellung mit Credits bezahlt!",
+      "noCreditsNotificationTitle": "Nicht genügend credits.",
+      "loginButton": "Anmelden",
+      "username": "Nutzername",
+      "password": "Passwort"
+	
     },
 }
 
