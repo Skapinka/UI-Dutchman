@@ -79,19 +79,28 @@
 
     <div id ="ghost" ondrop="drop(event)" ondragover="allowDrop(event)">
     </div>
+
+
+
+
+
     
     <!-- Login Info -->
     <div id="loginZone">
         <form id="loginForm" name="loginCredentials" action="javascript: void(0);">
-            <input class="loginDetails" type="text" name="username" placeholder="Username">
-            <input class="loginDetails" type="password" name="password" placeholder="Password">
+            <input id="username" class="loginDetails" type="text" name="username" >
+            <input id="password" class="loginDetails" type="password" name="password">
 
             <div>
-                <input class="loginDetails" type="submit" id="login" name="login" value="Log in" onClick="doLogin(loginCredentials)">
+                <input class="loginDetails" type="submit" id="loginButton" name="login"  onClick="doLogin(loginCredentials)">
             </div>
         </form>
 
     </div>
+
+
+
+    
 
     <!-- Language Toggle -->
     <div id="lang">
