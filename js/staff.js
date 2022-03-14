@@ -13,16 +13,15 @@ $(document).ready(function() {
     selectTab("all");    // highlight the all tab
     $('body').css("height", $(window).height()-10);
 
-    // All of the following "functions" should really be handled
-    // by some 'main'-function
-
+    
     $("#menu_all").click(function(){
         // Highlight tab
         selectTab("all");
         currentTab = "all";
 
         // Update the list of beverages
-        beverageList = allBeverages();
+        beverageList = allBeveragesStaff();
+	
 
         // Empty the beverage menu div
         $("#menuItems").empty();
@@ -33,70 +32,6 @@ $(document).ready(function() {
 
         });
     });
-
-    $("#menu_beer").click(function(){
-        selectTab("beer");
-        currentTab = "beer";
-        beverageList = getBeverageType('Beer');
-        $("#menuItems").empty();
-        $.each(beverageList, function(element){
-            printBeverage(this);
-
-        });
-    });
-
-    $("#menu_wine").click(function(){
-        selectTab("wine");
-        currentTab = "wine";
-        beverageList = getBeverageType('Wine');
-        $("#menuItems").empty();
-        $.each(beverageList, function(element){
-            printBeverage(this);
-        });
-    });
-
-
-    $("#menu_spirits").click(function(){
-        selectTab("spirits");
-        currentTab = "spirits";
-        beverageList = getBeverageType('Cocktail');
-        $("#menuItems").empty();
-        $.each(beverageList, function(element){
-            printBeverage(this);
-
-        });
-    });
-
-    $("#menu_ecologic").click(function(){
-        selectTab("ecologic");
-        currentTab = "ecologic";
-        beverageList = getBeverageEco();
-        $("#menuItems").empty();
-        $.each(beverageList, function(element){
-            printBeverage(this);
-        });
-    });
-
-    $("#menu_koscher").click(function(){
-        selectTab("koscher");
-        currentTab = "koscher";
-        beverageList = getBeverageKoscher();
-        $("#menuItems").empty();
-        $.each(beverageList, function(element){
-            printBeverage(this);
-        });
-    });
-
-      $("#menu_gluten_free").click(function(){
-        selectTab("gluten_free");
-        currentTab = "gluten_free";
-        beverageList = getBeverageGlutenFree();
-        $("#menuItems").empty();
-        $.each(beverageList, function(element){
-            printBeverage(this);
-        });
-    });
-
 });
 
 
@@ -114,18 +49,21 @@ function selectTab(targetTab) {
 }
 
 // Function for printing a menu entry
-// entry = [ID, Name, Type, Price, %alc, grape, serving size, producer, year, contents, special, typetype, country]
+// entry = [ID, Name, Type, Price, %alc, grape, serving size, producer, year, contents, special, typetype, country, stock]
 
 function printBeverage(entry) {
     // Append a new div containing beverage info
     $("#menuItems").append(
-        '<div class="beverage" title='+ "'" + getBevInfo(entry) + "'" +  '>' +
-        '<div class="addBeverage" onClick=\"doInit(\'addBeverageFun\', ' + entry[0] + ')\">+</div>' +
+        '<div class="beverage" id=' + entry[0] + ' title='+ "'" + getBevInfo(entry) + "'" +  '>' +
+        '<div class="hideBeverage" onClick=\"hideBeverage(' + entry[0] + ')\">hide</div>' +
         '<b>' + entry[1] + '</b>'+
-        '<br><i>' + entry[4] + '</i>' + 
+        //'<br><i>' + entry[4] + '</i>' + 
         '<p class="beveragePrice">' + entry[3] + ' kr</p>' +
+	'<p class="stock">Stock: ' + entry[13] + '</p>' +
         '</div>'
     )
+
+    
 }
 
 
@@ -162,5 +100,22 @@ function getBevInfo(entry){
     };
 
     return info;
+}
+
+
+// hides the beverage with ID from the users.
+// sets the "hidden" field of the database to 1 for this beverage
+function hideBeverage(ID) {
+    changeHidden(ID, 1);
+    update_view();
+}
+
+
+// Shows the beverage with ID from the users
+// sets the hidden field of the database to 0 for this beverage
+function showBeverage(ID) {
+    changeHidden(ID, 0);
+    update_view();
+
 }
 

@@ -1,0 +1,141 @@
+<!-- This is the staff page of our solution to the flying dutchman project -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Flying Dutchman staff</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
+
+
+    <script type="text/javascript" src="db/Beverages.js"></script>
+    <script type="text/javascript" src="db/DBLoaded.js"></script>
+    <script type="text/javascript" src="db/loader.js"></script>
+    
+    <script type="text/javascript" src="js/Dictionary.js"></script>
+    <script type="text/javascript" src="js/main-staff.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/staff.js"></script>
+    <script type="text/javascript" src="js/shoppingCart.js"></script>
+    <script type="text/javascript" src="js/undomanager.js"></script>
+    <script type="text/javascript" src="js/dragndrop.js"></script>
+    <script type="text/javascript" src="js/checkout.js"></script> 
+    <script type="text/javascript" src="js/pageNotifications.js"></script> 
+
+    
+</head>
+<body>
+
+<div id="header">
+  <img id="headerBackground" src="img/horizplank.jpg"/>
+  
+
+  <div id="title">
+  </div>
+
+  <!-- ship image -->
+  <div id="ship" ondrop="drop(event)" ondragover="allowDrop(event)">
+  </div>
+  
+  <div id ="ghost" ondrop="drop(event)" ondragover="allowDrop(event)">
+  </div>
+  
+
+
+<!-- Login Info -->
+<div id="loginZone">
+  <form id="loginForm" name="loginCredentials" action="javascript: void(0);">
+    <input id="username" class="loginDetails" type="text" name="username" >
+    <input id="password" class="loginDetails" type="password" name="password">
+    
+    <div>
+      <input class="loginDetails" type="submit" id="loginButton" name="login"  onClick="doLogin(loginCredentials)">
+    </div>
+  </form>
+
+  
+</div>
+
+  <div id="lang">
+    <img id="flag" src="" onclick="change_lang()"/>
+  </div>
+    
+</div>
+
+
+
+  <!-- Menu tab header -->
+<ul id="menuTabs">
+    <li id="menu_all"         class="mTab"></li>
+</ul>
+
+
+<div id="menu">
+  <img id="menuBackground" src="img/ocean.jpg"/>
+    <!-- Beverage list container -->
+  
+  <div id="menuItems" >
+    <!-- Drinks load here -->
+  </div>
+
+      <!-- Shopping cart zone, right side of the menu-->
+    <div id="shoppingCart">
+        <div id="shoppingCart_text"></div>
+
+        <img id="shoppingCartBackground" src="img/paper.jpg"/>
+        
+        <!-- Selected items should contain all selected items-->
+        <div id="selectedItems">
+        </div>
+        
+        
+
+        <div id="undoredo">
+            <div id="undoButton" onclick="undoFunc()"></div>
+            <div id="redoButton" onclick="redoFunc()"></div>
+        </div>
+
+
+        <div id="paymentWindow">
+            <div id="paymentWindowClose">x</div>
+            
+            <!--  -->
+            <div id="selectedItemsCheckout">
+            </div>
+
+            <span id="priceTotalTxt"></span>
+            <span id="priceTotal"></span>
+
+            <div id="paymentMethod">
+                <span id="checkmarkT">
+                    <span id="tableCheckmark">x</span>
+                </span>
+                <span id="paymentMethodText">
+            </div>
+
+            <div id="paymentCredits">
+                <span id="checkmarkC">
+                    <span id="creditsCheckmark">x</span>
+                </span>
+                <span id="paymentCreditsText">
+            </div>
+            
+        </div>
+
+        <div id="proceedCheckoutContainer">
+            <div id="proceedCheckout"></div>
+            <div id="proceedPayment"></div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

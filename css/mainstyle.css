@@ -1034,3 +1034,46 @@ body {
 .mTab:hover {
     background-color: #403434;
 }
+
+
+.stock {
+    backdrop-filter: blur(3px);
+    font-weight: bold;
+    width: 70%;
+    position: relative;
+    
+}
+
+
+.hideBeverage {
+    cursor: pointer;
+    user-select: none;
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+
+    background-color: var(--remove-bev);
+    color: #FFF;
+
+    width: 40px;
+    height: 25px;
+
+    border-radius: 30%;
+}
+
+
+@media screen and (max-width: 900px){
+    .hideBeverage{
+        font-size: 43px;
+
+        bottom:20px;
+
+        width: 50px;
+        height: 50px;
+    }
+}

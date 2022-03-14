@@ -18,8 +18,8 @@ var STOCK = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
-      "stock": "30"
+	    "special": "0",
+            "stock": "30"
         },  {
             "nr": "156303",
             "artikelid": "34564",
@@ -38,8 +38,8 @@ var STOCK = {
             "koscher": "1",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
-      "stock": "35"
+	    "special": "0",
+            "stock": "35"
         } ,  {
             "nr": "1124601",
             "artikelid": "50229",
@@ -58,8 +58,8 @@ var STOCK = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
-      "stock": "33"
+	    "special": "0",
+            "stock": "33"
         }, 	 {
             "nr": "148503",
             "artikelid": "626980",
@@ -78,7 +78,7 @@ var STOCK = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
-      "stock": "30"
+	    "special": "0",
+            "stock": "30"
         }
 ]};
