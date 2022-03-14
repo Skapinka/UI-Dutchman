@@ -1,5 +1,5 @@
 // =====================================================================================================
-// SOme sample API functions for the Flying Dutchman data base.
+// Some sample API functions for the Flying Dutchman data base.
 // =====================================================================================================
 // Author: Lars Oestreicher, 2018
 //
@@ -122,7 +122,7 @@ function allBeverages() {
     // items, you may introduce filter functions in the loop... see the template within comments.
     //
     for (i = 0; i < DB2.spirits.length; i++) {
-	if (DB2.spirits[i].special == 0){
+	if (DB2.spirits[i].special == 0 && DB2.spirits[i].hidden == 0){
             collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
 	};
     };
@@ -131,12 +131,29 @@ function allBeverages() {
 }
 
 
+// loads all the bevareges for the staff ( includes the specials)
+function allBeveragesStaff() {
+
+    // Using a local variable to collect the items.
+    var collector = [];
+    // The DB is stored in the variable DB2, with "spirits" as key element. If you need to select only certain
+    // items, you may introduce filter functions in the loop... see the template within comments.
+    //
+    for (i = 0; i < DB2.spirits.length; i++) {
+        collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn, DB2.spirits[i].stock]);
+    };
+    //
+    return collector;
+}
+
+
+
 // Should hopefully get all beverages of given type
 function getBeverageType(type) {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-        if (DB2.spirits[i].varugrupp == type && DB2.spirits[i].special == 0){
+        if (DB2.spirits[i].varugrupp == type && DB2.spirits[i].special == 0 && DB2.spirits[i].hidden == 0){
             collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp,  DB2.spirits[i].ursprunglandnamn]);
         }
     };
@@ -149,7 +166,7 @@ function getBeverageEco() {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-        if (DB2.spirits[i].ekologisk == 1 && DB2.spirits[i].special == 0){
+        if (DB2.spirits[i].ekologisk == 1 && DB2.spirits[i].special == 0 && DB2.spirits[i].hidden == 0){
             collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
         }
     };
@@ -162,7 +179,7 @@ function getBeverageKoscher() {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-        if (DB2.spirits[i].koscher == 1 && DB2.spirits[i].special == 0){
+        if (DB2.spirits[i].koscher == 1 && DB2.spirits[i].special == 0 && DB2.spirits[i].hidden == 0){
             collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
         };
     };
@@ -176,7 +193,7 @@ function getBeverageSpecial() {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-	if (DB2.spirits[i].special == 1){
+	if (DB2.spirits[i].special == 1 && DB2.spirits[i].hidden == 0){
 	    collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
         };
     };
@@ -189,7 +206,7 @@ function getBeverageGlutenFree() {
     var collector = [];
 
     for (i = 0; i < DB2.spirits.length; i++) {
-	if(DB2.spirits[i].glutenfri == 1) {
+	if(DB2.spirits[i].glutenfri == 1 && DB2.spirits[i].hidden == 0) {
 	    collector.push([DB2.spirits[i].artikelid, DB2.spirits[i].namn, DB2.spirits[i].varugrupp, DB2.spirits[i].prisinklmoms, DB2.spirits[i].alkoholhalt, DB2.spirits[i].druva, DB2.spirits[i].forpackning, DB2.spirits[i].producent, DB2.spirits[i].argang, DB2.spirits[i].innehall, DB2.spirits[i].special, DB2.spirits[i].varutyp, DB2.spirits[i].ursprunglandnamn]);
         };
 	
@@ -197,6 +214,53 @@ function getBeverageGlutenFree() {
     return collector;
 }
 
+// ======================================================================
+// this function changes the stock of item item to newamount
+
+function changeStock(itemID, newAmount) {
+
+    // finds the item in the database
+    // and updates the database
+   
+    for (i = 0; i < DB2.spirits.length; i++){
+	if (DB2.spirits[i].artikelid == itemID) {
+	    DB2.spirits[i].stock = newAmount;
+	};
+    };
+    
+}
+
+
+// get the currect stock of product with id productID
+function getStock(productID) {
+    for (i = 0; i < DB2.spirits.length; i++) {
+        if (DB2.spirits[i].artikelid === productID) {
+            return DB2.spirits[i].stock;
+        };
+    };
+    
+}
+
+
+// returns 1 if the item is hidden for customer or 0 if it is not
+function getHidden(productID) {
+    for (i=0; i<DB2.spirits.length; i++) {
+	if (DB2.spirits[i].artikelid === productID) {
+	    return DB2.spirits[i].hidden;
+	}
+    }
+
+}
+
+// changes wheather the product with id productID is hidden (newValue=1) or not (newValue =0)
+function changeHidden(productID, newValue) {
+    for(i=0; i<DB2.spirits.length; i++){
+	if (DB2.spirits[i].artikelid == productID) {
+	    DB2.spirits[i].hidden = newValue;
+	}
+    }
+
+}
 
 // =====================================================================================================
 // This function returns the names of all strong beverages (i.e. all that contain a percentage of alcohol

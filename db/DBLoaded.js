@@ -15,7 +15,7 @@ var DB = {
             "credentials": "0",
             "password": "a",
             "username": "a",
-            "first_name": "a",
+            "first_name": "Chet",
             "last_name": "b",
             "email": "a@b.se",
             "phone": "0701234567"

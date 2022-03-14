@@ -9,7 +9,7 @@
     <title>The Flying Dutchman</title>
     <script type="text/javascript" src="js/jquery.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
 
     <script type="text/javascript" src="db/admin.js"></script>
     <script type="text/javascript" src="db/loader.js"></script>

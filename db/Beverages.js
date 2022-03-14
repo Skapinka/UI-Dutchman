@@ -18,7 +18,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "0",
+	    "hidden": "1"
         },  {
             "nr": "156303",
             "artikelid": "34564",
@@ -37,7 +39,9 @@ var DB2 = {
             "koscher": "1",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "5",
+	    "hidden": "0"
         } ,  {
             "nr": "1124601",
             "artikelid": "50229",
@@ -56,7 +60,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "3",
+	    "hidden": "0"
         }, 	 {
             "nr": "148503",
             "artikelid": "626980",
@@ -75,7 +81,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "",
+	    "hidden": "0"
         },  {
             "nr": "7155903",
             "artikelid": "200404",
@@ -94,7 +102,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "8822303",
             "artikelid": "502145",
@@ -113,7 +123,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "",
+	    "hidden": "0"
         }, {
             "nr": "8916903",
             "artikelid": "650525",
@@ -132,7 +144,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "8839503",
             "artikelid": "794948",
@@ -151,7 +165,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "1191103",
             "artikelid": "776557",
@@ -170,7 +186,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "1183203",
             "artikelid": "817610",
@@ -189,7 +207,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "",
+	    "hidden": "0"
         },  {
             "nr": "151301",
             "artikelid": "824201",
@@ -208,7 +228,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         },{
             "nr": "8969603",
             "artikelid": "654371",
@@ -227,7 +249,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "1"
+	    "special": "1",
+	    "stock": "30",
+	    "hidden": "0"
         },{
             "nr": "8844203",
             "artikelid": "848592",
@@ -246,7 +270,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "1"
+	    "special": "1",
+	    "stock": "30",
+	    "hidden": "0"
         },{
             "nr": "8221203",
             "artikelid": "835089",
@@ -265,7 +291,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "1"
+	    "special": "1",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "135603",
             "artikelid": "824225",
@@ -284,7 +312,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "130403",
             "artikelid": "810995",
@@ -303,7 +333,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "1171503",
             "artikelid": "697169",
@@ -322,7 +354,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "1"
+	    "special": "1",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "143103",
             "artikelid": "434852",
@@ -341,7 +375,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "0",
 	    "innehall": "Gluten",
-	    "special": "1"
+	    "special": "1",
+	    "stock": "",
+	    "hidden": "0"
         }, {
             "nr": "9949901",
             "artikelid": "868496",
@@ -360,7 +396,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
          }, {
             "nr": "251701",
             "artikelid": "22520",
@@ -379,7 +417,9 @@ var DB2 = {
             "koscher": "1",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
 	}, {
             "nr": "1224401",
             "artikelid": "14872",
@@ -398,7 +438,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "1"
+	    "special": "1",
+	    "stock": "30",
+	    "hidden": "0"
         },  {
             "nr": "9046201",
             "artikelid": "829858",
@@ -417,7 +459,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "9942602",
             "artikelid": "863064",
@@ -436,7 +480,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         },  {
             "nr": "251801",
             "artikelid": "34443",
@@ -455,12 +501,14 @@ var DB2 = {
             "koscher": "1",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
 	}, {
             "nr": "1289008",
             "artikelid": "43331",
             "varnummer": "12890",
-            "namn": "Cape Original Shiraz Cabernet Sauvigno",
+            "namn": "Cape Original Shiraz",
             "prisinklmoms": "70.00",
             "varugrupp": "Wine",
 	    "varutyp": "Sweet Red",
@@ -474,12 +522,14 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         },  {
             "nr": "8041901",
             "artikelid": "852818",
             "varnummer": "80419",
-            "namn": "Heartwood Organic Wine Zinfande",
+            "namn": "Organic Wine Zinfande",
             "prisinklmoms": "89.00",
             "varugrupp": "Wine",
 	    "varutyp": "Red",
@@ -493,7 +543,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "7905306",
             "artikelid": "802277",
@@ -512,7 +564,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "7695001",
             "artikelid": "841774",
@@ -531,7 +585,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "7650501",
             "artikelid": "852934",
@@ -550,7 +606,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "30",
+	    "hidden": "0"
         }, {
             "nr": "1",
             "artikelid": "1",
@@ -569,7 +627,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Vermouth, Gin, Olives, Gluten Free",
-	    "special": "0"   
+	    "special": "0",
+	    "stock": "",
+	    "hidden": "0"
         }, {
             "nr": "2",
             "artikelid": "2",
@@ -588,7 +648,9 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Lime, Mint, Sugar, Rum, Club Soda, Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "",
+	    "hidden": "0"
         }, {
             "nr": "3",
             "artikelid": "3",
@@ -607,6 +669,8 @@ var DB2 = {
             "koscher": "0",
 	    "glutenfri": "1",
 	    "innehall": "Vodka, Orange liqour, Cranberry Juice, Lime Juice, Gluten Free",
-	    "special": "0"
+	    "special": "0",
+	    "stock": "",
+	    "hidden": "0"
         }
 	]};
