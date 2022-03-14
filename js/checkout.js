@@ -42,10 +42,20 @@ var paymentToggle = false;
 
 function doPayment() {
     // pay with credit
-    if (creditToggle && localStorage.getItem('userdetails').split(",")[5] >= currentTotal) {
+
+    // loads currect credit from database
+    var userName = localStorage.getItem('userdetails').split(",")[1];
+    var currentCredit = getBalance(userName);
+    
+    if (creditToggle && currentCredit >= currentTotal) {
         details = localStorage.getItem('userdetails').split(",");
         details[5] = details[5] - currentTotal;
         localStorage.setItem('userdetails', details);
+	
+	// sets new credit score in database
+	changeBalance(userName, currentCredit-currentTotal);
+
+	
         payCreditsNotification(true)
         clearCart();
     } else if (localStorage.getItem('userdetails').split(",")[5] < currentTotal) {
