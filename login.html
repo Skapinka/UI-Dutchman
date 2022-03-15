@@ -5,6 +5,22 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <script type="text/javascript" src="js/login.js"></script>
+    <script language="javascript">
+    function check(form)
+    {
+      if(form.Uname.value == "admin" && form.Pass.value == "admin")
+      {
+        window.open('admin.html')
+      }
+      else if(form.Uname.value == "staff" && form.Pass.value == "staff")
+      {
+        window.open('staff.html')
+      }
+      else {
+        alert("Error Password or Username")
+      }
+    }
+    </script>
 </head>
 <body>
     <h2>Login</h2><br>
