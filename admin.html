@@ -1,4 +1,4 @@
-<!-- This is the main page of our solution to the flying dutchman project -->
+<!-- This is the staff page of our solution to the flying dutchman project -->
 
 <!DOCTYPE html>
 
@@ -6,53 +6,66 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>The Flying Dutchman</title>
+    <title>The Flying Dutchman Manager</title>
     <script type="text/javascript" src="js/jquery.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/admin.css">
 
-    <script type="text/javascript" src="db/admin.js"></script>
+
+    <script type="text/javascript" src="db/Beverages.js"></script>
+    <script type="text/javascript" src="db/DBLoaded.js"></script>
     <script type="text/javascript" src="db/loader.js"></script>
 
-    <script type="text/javascript" src="js/admin.js"></script>
     <script type="text/javascript" src="js/Dictionary.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/main-staff.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/shoppingCart.js"></script>
+    <script type="text/javascript" src="js/undomanager.js"></script>
+    <script type="text/javascript" src="js/dragndrop.js"></script>
+    <script type="text/javascript" src="js/checkout.js"></script>
+    <script type="text/javascript" src="js/pageNotifications.js"></script>
 
 
 </head>
 <body>
 
- <div id="header">
-    <img id="headerBackground" src="img/horizplank.jpg"/>
+<div id="header">
+  <img id="headerBackground" src="img/horizplank.jpg"/>
 
 
-    <div id="title">
-    </div>
+  <div id="title">
+  </div>
+
+  <!-- ship image -->
+  <div id="ship" ondrop="drop(event)" ondragover="allowDrop(event)">
+  </div>
+
+  <div id ="ghost" ondrop="drop(event)" ondragover="allowDrop(event)">
+  </div>
 
 
 
-    
-    <div id="lang">
-        <img id="flag" src="" onclick="change_lang()"/>
-    </div>
+  <div id="lang">
+    <img id="flag" src="" onclick="change_lang()"/>
+  </div>
 
 </div>
 
 
-<!-- Menu tab header -->
+
+  <!-- Menu tab header -->
 <ul id="menuTabs">
     <li id="menu_all"         class="mTab"></li>
-    <li id="menu_beer"        class="mTab"></li>
-    <li id="menu_wine"        class="mTab"></li>
-    <li id="menu_spirits"     class="mTab"></li>
-    <li id="menu_ecologic"    class="mTab"></li>
-    <li id="menu_koscher"     class="mTab"></li>
-    <li id="menu_gluten_free" class="mTab"></li>
-    <!-- Specials are only visible to vip and above -->
 </ul>
-  
-  <div id="Stock" >
-      <!-- Drinks load here -->
+
+
+<div id="menu">
+  <img id="menuBackground" src="img/ocean.jpg"/>
+    <!-- Beverage list container -->
+
+  <div id="menuItems" >
+    <!-- Drinks load here -->
   </div>
 
 </body>

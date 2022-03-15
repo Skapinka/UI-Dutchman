@@ -1,13 +1,897 @@
-#Stock {
-    display:inline-block;
-    overflow-y:scroll;
-    max-height:100%;
-    float:left;
-    width: calc(100% - 300px);
+@page {
+    font-family: "georgia";
+}
+
+body {
+    background-color: #000;
+}
+
+div {
+    user-select: none;
+}
+
+:root {
+    --main-bg: #E3D6C7; /* #EEE;*/
+
+    --darken-seethru-lighter: rgba(0,0,0,0.2);
+    --darken-seethru-light: rgba(0,0,0,0.4);
+    --darken-seethru: rgba(0,0,0,0.6);
+    --darken-seethru-dark: rgba(0,0,0,0.7);
+    --darken-seethru-darker: rgba(0,0,0,0.9);
+
+    --redden-bg: rgba(256,0,0,0.2);
+    --lighten-bg: rgba(256,256,256,0.4);
+
+    --item-bg: #d9bb92;
+    --side-bg: #E3D6C7; /*#CCC;*/
+
+    --payment-bg: rgba(230, 182, 85, 0.9);
+    --payment-text: black;
+
+    --dark-accent: #453838; /* #555;*/
+    --cart-header: #777;
+    --side-accent: #AAA;
+
+    --border-white: #FFF;
+
+    --close-red: #DB1F1F;
+    --close-red-dark: #a61f1f;
+    --close-red-darker: #4d1212;
+
+    --cash-green: #489931;
+    --cash-green-dark: #387528;
+    --cash-green-darker: #274d1d;
+
+    --pay-green: #3b7d28;
+
+    --remove-bev: #e62315;
+    --remove-bev-dark: #b51a0e;
+    --remove-bev-darker: #85130b;
+}
+
+body {
+    overflow: hidden;
+}
+
+#header {
+    position:relative;
+
+    height : 100px;
+
+    /*background : var(--main-bg);*/
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+#headerBackground {
+    position:absolute;
+    z-index:-1;
+    background-repeat: repeat;
+
+    left:0;
+
+    height:100%;
+    width:100%;
+
+    object-fit: cover;
+}
+
+
+#title {
+    user-select: none;
+
+    font-size: 40px;
+    color: white;
+
+    padding: 20px 0;
+    margin-left: 20px;
+    text-align: center;
+    z-index:1;
+
+    float: left;
+
+    text-shadow: 0 3px 5px rgba(0,0,0,0.6);
 }
 
 @media screen and (max-width: 900px){
-    #Stock {
+    #title {
+        font-size: 25px;
+    }
+}
+
+#ship {
+    cursor:grab;
+    /*border: 1px dashed black;*/
+    height: 103px;
+    width: 103px;
+    float: left;
+}
+
+#title_img {
+    margin: 7px;
+    height : 85px;
+    width: 89px;
+}
+
+#ghost {
+    cursor:grab;
+    /*border: 1px dashed black;*/
+    height: 96px;
+    width: 96px;
+    float: left;
+    border: 2px dotted white;
+    background-color: rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 900px){
+    #ship {
+        display:none;
+    }
+    #ghost {
+        display:none;
+    }
+}
+
+#lang {
+    cursor: pointer;
+    float: right;
+}
+
+#flag {
+    cursor: pointer;
+    position:absolute;
+
+    right:220px;
+
+    margin: 7px;
+
+    height : 60px;
+    width : 60px;
+    border-radius: 100%;
+
+    border: 3px solid white;
+}
+
+@media screen and (max-width: 900px){
+    #flag {
+        right:120px;
+    }
+}
+
+#menuTabs {
+    margin: 0;
+    padding: 0;
+    margin-top:8px;
+    overflow: hidden;
+    background-color: var(--dark-accent);
+    max-height:100%;
+
+    box-shadow: 0 20px 25px rgba(0,0,0,0.4);
+
+    text-shadow: 0 2px 2px rgba(0,0,0,0.6);
+}
+
+#menu {
+    position: relative;
+    /*background-color: var(--item-bg);*/
+    overflow:auto;
+    height:calc(100vh - 182px);
+    background-size: 100px;
+}
+
+
+/* Images are given in html code, could not find a way to do it in css */
+#menuBackground {
+    z-index:-1;
+    position:absolute;
+    left:0;
+    height:100%;
+    width:calc(100%);
+    object-fit:cover;
+}
+
+@media screen and (max-width: 900px){
+    #menuBackground{
         width: calc(100% - 200px);
+    }
+}
+
+#shoppingCartBackground {
+    position:absolute;
+    z-index:-1;
+    left:0;
+    top:0;
+    width:1%;
+    height:1%;
+    object-fit:cover;
+}
+
+#menuItems {
+    display:inline-block;
+    overflow-y:auto;
+    max-height:100%;
+    float:left;
+    width: calc(100%);
+}
+
+@media screen and (max-width: 900px){
+    #menuItems {
+        width: calc(100% - 200px);
+    }
+}
+
+#shoppingCart {
+    display:inline-block;
+    position:relative;
+    /*background-color: var(--cart-header);*/
+
+    width:300px;
+    height:100%;
+}
+
+#shoppingCart_text {
+    font-size: 20px;
+
+    text-align: center;
+
+    padding-top: 14px;
+
+    color: #FFF;
+    height: 70px;
+
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(3px);
+}
+
+#loginZone {
+    position:absolute;
+
+    right:8px;
+    top:6px;
+
+    /*background : var(--side-bg);*/
+
+    height : 86px;
+    width : 200px;
+    color: white;
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(3px);
+}
+
+
+@media screen and (max-width: 900px){
+    #loginZone {
+        width:100px;
+    }
+}
+
+#loginButton{
+    cursor: pointer;
+    width: 96%;
+
+}
+
+#loggedIn {
+    padding-left:10px;
+    padding-top: 10px;
+}
+
+#logout {
+    position:absolute;
+    cursor:pointer;
+    bottom: 10px;
+}
+
+#undoButton {
+    cursor: pointer;
+    user-select: none;
+
+    position:absolute;
+    left:5px;
+
+    color: white;
+
+    display:inline-block;
+
+    top: 50px;
+
+    padding-top:3px;
+
+    background-color: var(--darken-seethru);
+
+    height: 25px;
+    width: calc(50% - 10px);
+
+    font-size: 18px;
+    text-align: center;
+
+    border-radius: 5px;
+}
+
+#undoButton:hover {
+    background-color:var(--darken-seethru-dark);
+}
+
+#undoButton:active {
+    background-color:var(--darken-seethru-darker);
+}
+
+#redoButton {
+    cursor: pointer;
+    user-select: none;
+
+    position:absolute;
+    right:5px;
+
+    color: white;
+
+    display:inline-block;
+
+    top: 50px;
+
+    padding-top:3px;
+
+    background-color: var(--darken-seethru);
+
+    height: 25px;
+    width: calc(50% - 10px);
+
+    font-size: 18px;
+    text-align: center;
+
+    border-radius: 5px;
+}
+
+#redoButton:hover {
+    background-color:var(--darken-seethru-dark);
+}
+
+#redoButton:active {
+    background-color:var(--darken-seethru-darker);
+}
+
+#proceedCheckoutContainer {
+    position: absolute;
+    user-select: none;
+
+    bottom:0;
+
+    background-color: var(--side-accent);
+
+    height:60px;
+
+    width:100%;
+
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(3px);
+}
+
+#proceedCheckout:hover {
+    background-color: var(--darken-seethru-dark);
+}
+
+#proceedCheckout:active {
+    background-color: var(--darken-seethru-darker);
+}
+
+#proceedCheckout {
+    cursor: pointer;
+    user-select: none;
+
+    position: absolute;
+
+    background-color: var(--darken-seethru);
+    border: 1px dashed white;
+
+    top: 10px;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+
+    padding-top: 10px;
+
+    color: #FFF;
+    text-align:center;
+}
+
+#proceedPayment {
+    cursor: pointer;
+    user-select: none;
+
+    display:none;
+    position: absolute;
+
+    background-color: var(--cash-green);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    border: 1px dashed white;
+
+    top: 10px;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+
+    padding-top: 10px;
+
+    color: #FFF;
+    text-align:center;
+}
+
+#proceedPayment:hover {
+    background-color:var(--cash-green-dark);
+}
+
+#proceedPayment:active {
+    background-color:var(--cash-green-darker);
+}
+
+#paymentWindow {
+    position:absolute;
+    top: 96px;
+    bottom: 72px;
+    right: 10px;
+    left: 10px;
+
+    display:none;
+
+    border: 1px dashed black;
+
+    backdrop-filter: blur(3px);
+    background-color: var(--payment-bg);
+
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.6);
+}
+
+#paymentWindowClose {
+    cursor:pointer;
+
+    position:absolute;
+
+    top: 5px;
+    right: 10px;
+
+    font-family: "Arial";
+    font-weight: bolder;
+    font-size: 24px;
+    color: var(--close-red);
+}
+
+#paymentWindowClose:hover {
+    color: var(--close-red-dark);
+}
+
+#paymentWindowClose:active {
+    color: var(--close-red-darker);
+}
+
+#selectedItemsCheckout {
+    position:absolute;
+    overflow-y:auto;
+
+    top:32px;
+    bottom:100px;
+    right:10px;
+    left:10px;
+
+    border-bottom: 1px dashed black;
+    /*border: 1px dotted white;*/
+}
+
+#newPerson {
+    font-weight: bolder;
+    font-family: "Arial";
+    cursor:pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#newPerson:hover {
+    background-color: var(--lighten-bg);
+}
+
+.removePerson {
+    cursor:pointer;
+    color: var(--close-red);
+    transition: background-color 0.2s ease;
+    background-color: rgba(0,0,0,0);
+}
+.removePerson:hover {
+    background-color: var(--redden-bg);
+}
+
+.personNum {
+    font-family: 'consolas';
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 900px){
+    .personNum{
+        font-size: 16px;
+    }
+}
+
+.totalPerson {
+    font-family: 'consolas';
+}
+
+.checkoutItem {
+    cursor: pointer;
+
+    position:relative;
+    padding-left:10px;
+    padding-right:46px;
+    margin-top:4px;
+
+    font-size: 14px;
+    overflow-wrap: break-word;
+
+    background-color: rgba(0, 0, 0, 0.0);
+    transition: background-color 0.2s ease;
+}
+.checkoutItem:hover {
+    background-color: var(--lighten-bg);
+}
+
+.checkoutItemPrice {
+    position:absolute;
+    right:10px;
+}
+
+#priceTotalTxt {
+    position:absolute;
+    bottom: 70px;
+    left: 20px;
+    font-weight: bold;
+    color: var(--payment-text);
+    /*text-shadow: 1px 1px 3px rgba(0,0,0,0.6);*/
+}
+
+#priceTotal {
+    position:absolute;
+    bottom: 70px;
+    right: 20px;
+    color: var(--payment-text);
+    /*text-shadow: 1px 1px 3px rgba(0,0,0,0.6);*/
+}
+
+#paymentMethod {
+    position:absolute;
+    bottom: 36px;
+    left: 20px;
+}
+
+#checkmarkT {
+    position:absolute;
+    height:25px;
+    width:25px;
+    background-color: #EEE;
+}
+
+#checkmarkT:hover {
+    cursor:pointer;
+    background-color: #DDD;
+}
+
+#checkmarkT:active {
+    background-color: #CCC;
+}
+
+#tableCheckmark {
+    pointer-events: none;
+    position:absolute;
+
+    display: none;
+
+    font-family: "arial";
+    font-weight:bolder;
+    font-size: 24px;
+    text-align: center;
+
+    top:-2px;
+
+    height: 24px;
+    width: 24px;
+
+}
+
+#paymentMethodText {
+    position:absolute;
+    left: 36px;
+    width: 140px;
+}
+
+/* Same as above but for credits */
+
+#paymentCredits {
+    display: none;
+}
+
+#paymentCredits {
+    position:absolute;
+    bottom: 66px;
+    left: 20px;
+}
+
+#checkmarkC {
+    position:absolute;
+    height:25px;
+    width:25px;
+    background-color: #EEE;
+}
+
+#checkmarkC:hover {
+    cursor:pointer;
+    background-color: #DDD;
+}
+
+#checkmarkC:active {
+    background-color: #CCC;
+}
+
+#creditsCheckmark {
+    pointer-events: none;
+    position:absolute;
+
+    display: none;
+
+    font-family: "arial";
+    font-weight:bolder;
+    font-size: 24px;
+    text-align: center;
+
+    top:-2px;
+
+    height: 24px;
+    width: 24px;
+
+}
+
+#paymentCreditsText {
+    position:absolute;
+    left: 36px;
+    width: 140px;
+}
+
+@media screen and (max-width: 900px){
+    #shoppingCart {
+        display:inline-block;
+        position:relative;
+
+        width:200px;
+        height:100%;
+    }
+
+}
+
+#selectedItems {
+    position:absolute;
+
+    overflow-y:auto;
+
+    top: 84px;
+
+    /*background-color: var(--side-bg);*/
+
+    width: 100%;
+    height: calc(100% - 143px);
+}
+
+
+
+.loginDetails {
+    margin-top: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
+
+    width: calc(100% - 16px);
+
+}
+
+.beverage {
+    float: left;
+    position: relative;
+
+    color: #FFF;
+
+    background-color: var(--darken-seethru);
+    background: var(--darken-seethru);
+
+
+    width:10%;
+    min-width: 120px;
+    max-width: 220px;
+    height: 100px;
+
+    margin: 5px;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(3px);
+}
+
+.beverageSelected {
+    float: left;
+    position: relative;
+
+    width:calc(50% - 40px);
+    height: 100px;
+
+    margin: 5px;
+    padding: 10px;
+
+    backdrop-filter: blur(3px);
+
+
+    border-radius: 5px;
+
+    border: 1px solid var(--dark-accent);
+}
+
+@media screen and (max-width: 900px){
+    .beverage{
+        min-width:unset;
+        max-width:unset;
+        width: calc(100% - 50px);
+        height: 60px;
+
+        padding-left: 25px;
+
+
+        border-radius: 20px;
+        border-top-right-radius: 60px;
+        border-bottom-right-radius: 60px;
+
+    }
+
+    .beverageSelected {
+        width:calc(100% - 40px);
+
+        height:unset;
+        min-height:60px;
+        max-height:100px;
+    }
+
+    .selectedBeverageName {
+        max-width: 100px;
+    }
+}
+
+.beveragePrice {
+    position: absolute;
+    bottom: 0px;
+}
+
+.addBeverage {
+    cursor: pointer;
+    user-select: none;
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    font-weight: bolder;
+    font-size: 26px;
+    text-align: center;
+
+    background-color: var(--cash-green);
+    color: #FFF;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 100%;
+}
+
+.addBeverage:hover {
+    background-color: var(--cash-green-dark);
+}
+
+.addBeverage:active {
+    background-color: var(--cash-green-darker);
+}
+
+@media screen and (max-width: 900px){
+    .addBeverage{
+        font-size: 43px;
+
+        bottom:20px;
+
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.removeBeverage {
+    cursor: pointer;
+    user-select: none;
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    font-weight: bolder;
+    font-size: 26px;
+    text-align:center;
+
+
+    background-color: var(--remove-bev);
+    color: #FFF;
+
+    width: 30px;
+    height: 30px;
+}
+
+.removeBeverage:hover {
+    background-color: var(--remove-bev-dark);
+}
+
+.removeBeverage:active {
+    background-color: var(--remove-bev-darker);
+}
+
+@media screen and (max-width: 900px){
+    .removeBeverage{
+        width:40px;
+        height:40px;
+        font-size: 32px;
+    }
+}
+
+.mTab {
+    cursor: pointer;
+    user-select: none;
+
+    display: block;
+    float: left;
+    padding: 20px;
+    color: #FFF;
+
+    background-color: #453838;
+}
+
+.mTab:hover {
+    background-color: #403434;
+}
+
+
+.stock {
+    backdrop-filter: blur(3px);
+    font-weight: bold;
+    width: 70%;
+    position: relative;
+
+}
+
+
+.hideBeverage {
+    cursor: pointer;
+    user-select: none;
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+
+    background-color: var(--remove-bev);
+    color: #FFF;
+
+    width: 40px;
+    height: 25px;
+
+    border-radius: 30%;
+}
+
+
+@media screen and (max-width: 900px){
+    .hideBeverage{
+        font-size: 43px;
+
+        bottom:20px;
+
+        width: 50px;
+        height: 50px;
     }
 }
