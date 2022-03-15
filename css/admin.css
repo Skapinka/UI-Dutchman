@@ -98,13 +98,7 @@ body {
     }
 }
 
-#ship {
-    cursor:grab;
-    /*border: 1px dashed black;*/
-    height: 103px;
-    width: 103px;
-    float: left;
-}
+
 
 #title_img {
     margin: 7px;
@@ -112,15 +106,6 @@ body {
     width: 89px;
 }
 
-#ghost {
-    cursor:grab;
-    /*border: 1px dashed black;*/
-    height: 96px;
-    width: 96px;
-    float: left;
-    border: 2px dotted white;
-    background-color: rgba(0,0,0,0.1);
-}
 
 @media screen and (max-width: 900px){
     #ship {
@@ -140,7 +125,7 @@ body {
     cursor: pointer;
     position:absolute;
 
-    right:220px;
+    right:0px;
 
     margin: 7px;
 
