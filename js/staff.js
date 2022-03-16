@@ -31,7 +31,29 @@ $(document).ready(function() {
             printBeverage(this);
 
         });
+	update_view();
     });
+
+
+    // if we're on the add credit tab, we load the add credit form into the div menuItems.
+    $("#menu_add_credit").click(function(){
+	selectTab("add_credit");
+	currentTab = "add_credit";
+	$("#menuItems").empty();
+
+	
+	$("#menuItems").append('<div id="addCredit">' +
+			       '<form id="addCreditForm" name="addCreditCredentials" action="javascript: void(0);">' +
+			       '<input id="usernameCredit" class="addCreditDetails" type="text" name="username"></input>' +
+			       '<br></br>' +
+			       '<input id="amount" class="addCreditDetails" type="text" name="amount">' +
+			       '<br></br>' +
+			       '</input> <input class="addCreditDetails" type="submit" id="addCreditButton" name="add" onClick="addCredits(addCreditCredentials)">' +
+			       '</input></form></div>');
+	update_view();
+    });
+
+    
 });
 
 
@@ -59,7 +81,7 @@ function printBeverage(entry) {
         '<b>' + entry[1] + '</b>'+
         //'<br><i>' + entry[4] + '</i>' + 
         '<p class="beveragePrice">' + entry[3] + ' kr</p>' +
-	'<p class="stock">Stock: ' + entry[13] + '</p>' +
+	    '<p class="stock">' + get_string("stock") + ': ' + entry[13] + '</p>' +
         '</div>'
     )
 
@@ -119,3 +141,30 @@ function showBeverage(ID) {
 
 }
 
+
+// function for adding credit to the user if it exits
+
+function addCredits(form) {
+    
+    var username = form.username.value;
+    var amount = form.amount.value;
+
+    var db = DB.users;
+    var userExists = 0;
+ 
+    $.each(db, function(index, item) {
+	if (this.username == username) {
+	    userExists = 1;
+	    changeBalance(username, parseInt(getBalance(username))+parseInt(amount));
+	};
+    });
+
+    // different notification depending on if the user exits. Clears the form it does. 
+    if (userExists == 0) {
+	notAddedCreditNotification(true);
+    } else {
+	addedCreditNotification(true);
+	form.reset();
+    }
+    update_view();
+}

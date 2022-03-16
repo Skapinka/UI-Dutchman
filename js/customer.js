@@ -26,12 +26,13 @@ $(document).ready(function() {
 
         // Empty the beverage menu div
         $("#menuItems").empty();
-
+	
         // Loop through each entry in 'beverageList' and create a menu card for it
         $.each(beverageList, function(element){
             printBeverage(this);
 
         });
+	update_view();
     });
 
     $("#menu_beer").click(function(){
@@ -40,9 +41,10 @@ $(document).ready(function() {
         beverageList = getBeverageType('Beer');
         $("#menuItems").empty();
         $.each(beverageList, function(element){
-            printBeverage(this);
-
+	    printBeverage(this);
         });
+	
+	update_view();
     });
 
     $("#menu_wine").click(function(){
@@ -53,6 +55,8 @@ $(document).ready(function() {
         $.each(beverageList, function(element){
             printBeverage(this);
         });
+	
+	update_view();
     });
 
 
@@ -65,6 +69,8 @@ $(document).ready(function() {
             printBeverage(this);
 
         });
+	
+	update_view();
     });
 
     $("#menu_ecologic").click(function(){
@@ -75,6 +81,8 @@ $(document).ready(function() {
         $.each(beverageList, function(element){
             printBeverage(this);
         });
+	
+	update_view();
     });
 
     $("#menu_koscher").click(function(){
@@ -85,6 +93,8 @@ $(document).ready(function() {
         $.each(beverageList, function(element){
             printBeverage(this);
         });
+	
+	update_view();
     });
 
       $("#menu_gluten_free").click(function(){
@@ -95,6 +105,8 @@ $(document).ready(function() {
         $.each(beverageList, function(element){
             printBeverage(this);
         });
+	 
+	update_view();
     });
 
 });

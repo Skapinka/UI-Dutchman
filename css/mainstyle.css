@@ -47,6 +47,8 @@ div {
     --remove-bev: #e62315;
     --remove-bev-dark: #b51a0e;
     --remove-bev-darker: #85130b;
+
+    --hide-bev: #9b3028;
 }
 
 body {
@@ -158,6 +160,155 @@ body {
 }
 
 /* Page-covering notifications */
+
+
+/* call security notification pop-up */
+
+#securityNotification {
+    position:absolute;
+    z-index:10;
+
+    display:none;
+
+    height:100%;
+    width:100%;
+
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(2px);
+}
+
+#securityNotificationBox {
+    cursor: pointer;
+
+    position:absolute;
+    background-color: white;
+    height:150px;
+    width:300px;
+
+    top:0;
+    bottom:0;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom:auto;
+
+    border: 1px solid grey;
+    border-radius: 15px;
+    box-shadow: 0 20px 15px rgba(0,0,0,0.6);
+}
+
+#securityNotificationTitle {
+    font-size: 22px;
+    font-weight:bold;
+
+    text-align:center;
+    margin-top:40px;
+
+    color: black;
+
+}
+
+
+
+/* added credit notification */
+
+#addedCreditNotification {
+    position:absolute;
+    z-index:10;
+
+    display:none;
+
+    height:100%;
+    width:100%;
+
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(2px);
+}
+
+#addedCreditNotificationBox {
+    cursor: pointer;
+
+    position:absolute;
+    background-color: white;
+    height:150px;
+    width:300px;
+
+    top:0;
+    bottom:0;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom:auto;
+
+    border: 1px solid grey;
+    border-radius: 15px;
+    box-shadow: 0 20px 15px rgba(0,0,0,0.6);
+}
+
+#addedCreditNotificationTitle {
+    font-size: 22px;
+    font-weight:bold;
+
+    text-align:center;
+    margin-top:40px;
+
+    color: black;
+
+}
+
+/* notification for when the user does not exist when trying to add credits   */
+
+#notAddedCreditNotification {
+    position:absolute;
+    z-index:10;
+
+    display:none;
+
+    height:100%;
+    width:100%;
+
+    background-color: var(--darken-seethru);
+    backdrop-filter: blur(2px);
+}
+
+#notAddedCreditNotificationBox {
+    cursor: pointer;
+
+    position:absolute;
+    background-color: white;
+    height:150px;
+    width:300px;
+
+    top:0;
+    bottom:0;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom:auto;
+
+    border: 1px solid grey;
+    border-radius: 15px;
+    box-shadow: 0 20px 15px rgba(0,0,0,0.6);
+}
+
+#notAddedCreditNotificationTitle {
+    font-size: 22px;
+    font-weight:bold;
+
+    text-align:center;
+    margin-top:40px;
+
+    color: black;
+
+}
+
+
 /* Normal buy notification */
 
 #buyNotification {
@@ -339,6 +490,19 @@ body {
     color: white;
 }
 
+#clickNotificationText3 {
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'verdana';
+
+    text-align:center;
+    
+    margin-top:30px;
+
+    color: black;
+}
+
+/* menu tabs */
 #menuTabs {
     margin: 0;
     padding: 0;
@@ -405,7 +569,7 @@ body {
     display:inline-block;
     position:relative;
     /*background-color: var(--cart-header);*/
-
+    float:right;
     width:300px;
     height:100%;
 }
@@ -1036,6 +1200,7 @@ body {
 }
 
 
+/* stock section for staff on beverage */
 .stock {
     backdrop-filter: blur(3px);
     font-weight: bold;
@@ -1044,7 +1209,7 @@ body {
     
 }
 
-
+/* hide/show beverage button for staff */
 .hideBeverage {
     cursor: pointer;
     user-select: none;
@@ -1057,7 +1222,7 @@ body {
     font-size: 18px;
     text-align: center;
 
-    background-color: var(--remove-bev);
+    background-color: var(--hide-bev);
     color: #FFF;
 
     width: 40px;
@@ -1077,3 +1242,102 @@ body {
         height: 50px;
     }
 }
+
+
+
+/* call security button */
+
+#security {
+    cursor: pointer;
+    position: relative;
+    right: 20%;
+}
+
+
+#callSecurity {
+    cursor: pointer;
+    position:absolute;
+
+    right:220px;
+    margin: 7px;
+
+    height : 60px;
+    width : 60px;
+    border-radius: 100%;
+
+    border: 3px solid white;
+}
+
+#callSecurity:hover {
+    filter: saturate(30);
+}
+
+@media screen and (max-width: 900px){
+    #callSecurity {
+        right:100px;
+    }
+}
+
+
+/* add credit box for staff*/
+#addCredit {
+    float: center;
+    position: relative;
+    
+    color: #FFF;
+    
+    background-color: var(--darken-seethru);
+    background: var(--darken-seethru);
+
+
+    width:30%;
+    height: 300px;
+
+    margin-left: 225px;
+    margin-top: 5px;
+    padding: 15px;
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(3px);
+	 
+}
+
+@media screen and (max-width: 900px){
+    #addCredit{
+        min-width:unset;
+        max-width:unset;
+        width: calc(100% - 50px);
+
+        padding-left: 25px;
+	margin-left: 5px;
+
+
+    }
+}
+
+#usernameCredit {
+    left-margin: 50px;
+    background-color: var(--main-bg);
+}
+
+#amount {
+    background-color: var(--main-bg);
+}
+
+#addCreditButton {
+    right-padding: 20px;
+    background-color: var(--dark-accent);
+    color: white;
+}
+
+.addCreditDetails {
+    margin-top: 20px;
+    height: 50px;
+    width: 94%;
+    font-size: 20px;
+}
+
+
+
+

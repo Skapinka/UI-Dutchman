@@ -30,6 +30,36 @@
 </head>
 <body>
 
+<div id="securityNotification"> 
+    <div id="securityNotificationBox">
+        <!--something like"Security has been called, click anywhere to continue!""-->
+        <div id="securityNotificationTitle"></div>
+        <div id="clickNotificationText"></div>
+    </div>
+</div>
+
+
+
+<div id="addedCreditNotification"> 
+    <div id="addedCreditNotificationBox">
+        <div id="addedCreditNotificationTitle"></div>
+        <div id="clickNotificationText1"></div>
+    </div>
+</div>
+
+
+
+<div id="notAddedCreditNotification"> 
+    <div id="notAddedCreditNotificationBox">
+        <div id="notAddedCreditNotificationTitle"></div>
+        <div id="clickNotificationText3"></div>
+    </div>
+</div>
+
+
+
+
+  
 <div id="header">
   <img id="headerBackground" src="img/horizplank.jpg"/>
   
@@ -37,40 +67,40 @@
   <div id="title">
   </div>
 
-  <!-- ship image -->
-  <div id="ship" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+  
+  
+
+  <!-- Login Info -->
+  <div id="loginZone">
   </div>
   
-  <div id ="ghost" ondrop="drop(event)" ondragover="allowDrop(event)">
-  </div>
   
 
-
-<!-- Login Info -->
-<div id="loginZone">
-  <form id="loginForm" name="loginCredentials" action="javascript: void(0);">
-    <input id="username" class="loginDetails" type="text" name="username" >
-    <input id="password" class="loginDetails" type="password" name="password">
-    
-    <div>
-      <input class="loginDetails" type="submit" id="loginButton" name="login"  onClick="doLogin(loginCredentials)">
-    </div>
-  </form>
-
   
-</div>
-
+<!-- button for changeing language -->
   <div id="lang">
     <img id="flag" src="" onclick="change_lang()"/>
   </div>
-    
+
+
+  <!-- Button for calling security  -->
+  <div id="security">
+    <img id="callSecurity" src="" onclick="call_security()"/>
+    </div>
+
+  
 </div>
+
+
+
 
 
 
   <!-- Menu tab header -->
 <ul id="menuTabs">
-    <li id="menu_all"         class="mTab"></li>
+  <li id="menu_all"         class="mTab"></li>
+  <li id="menu_add_credit"  class="mTab"></li>
 </ul>
 
 
