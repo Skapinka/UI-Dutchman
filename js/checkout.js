@@ -56,7 +56,7 @@ function doPayment() {
 	changeBalance(userName, currentCredit-currentTotal);
 
 	
-        payCreditsNotification(true)
+        payCreditsNotification(true);
         clearCart();
     } else if (localStorage.getItem('userdetails').split(",")[5] < currentTotal) {
         //not enough credit
