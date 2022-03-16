@@ -5,6 +5,9 @@ $(document).ready(function() {
     $("#buyNotification").click(function(){payNotification(false)});
     $("#payCreditsNotification").click(function(){payCreditsNotification(false)});
     $("#noCreditsNotification").click(function(){noCreditsNotification(false)});
+    $("#securityNotification").click(function(){securityNotification(false)});
+    $("#addedCreditNotification").click(function(){addedCreditNotification(false)});
+    $("#notAddedCreditNotification").click(function(){notAddedCreditNotification(false)});
 });
 
 
@@ -33,5 +36,29 @@ function payNotification(state) {
         $("#buyNotification").show();
     } else {
         $("#buyNotification").hide();
+    }
+}
+
+function securityNotification(state) {
+    if (state) {
+        $("#securityNotification").show();
+    } else {
+        $("#securityNotification").hide();
+    }
+}
+
+function addedCreditNotification(state) {
+    if (state) {
+        $("#addedCreditNotification").show();
+    } else {
+        $("#addedCreditNotification").hide();
+    }
+}
+
+function notAddedCreditNotification(state) {
+    if (state) {
+        $("#notAddedCreditNotification").show();
+    } else {
+        $("#notAddedCreditNotification").hide();
     }
 }

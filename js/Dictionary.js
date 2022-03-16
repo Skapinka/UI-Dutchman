@@ -9,20 +9,20 @@ dict = {
                 'loginMessage', 'undoButton', 'redoButton', 'payBar', 'payTable',
                 "paymentButton", "tableNumberText", "proceedCheckout", "priceTotalTxt", "proceedPayment",
                 "newPerson", "paymentMethodText", "paymentCreditsText", "buyNotificationTitle", "payCreditsNotificationTitle" ,
-              "payCreditsNotificationText", "clickNotificationText", "clickNotificationText1", "clickNotificationText2", "noCreditsNotificationTitle", "loginButton", "username", "password"], // string keys
-    'pics' : ['flag'],           // picture keys
+              "payCreditsNotificationText", "clickNotificationText", "clickNotificationText1", "clickNotificationText2", "noCreditsNotificationTitle", "loginButton", "username", "password", "hide", "show", "stock", "securityNotificationTitle", "menu_add_credit", "addedCreditNotificationTitle", "notAddedCreditNotificationTitle", "clickNotificationText3", "amount", "addCreditButton"], // string keys
+    'pics' : ['flag', 'callSecurity'],           // picture keys
 
     // English dictionary
     'en': {
         'title': "The Flying Dutchman",
         'flag': "img/en.png",
-        "menu_all": "All",
+        "menu_all": "All beverages",
         "menu_beer": "Beer",
         "menu_wine": "Wine",
         "menu_spirits": "Cocktails",
         "menu_ecologic": "Eco",
         "menu_koscher": "Koscher",
-	    "menu_gluten_free": "Gluten Free",
+	"menu_gluten_free": "Gluten Free",
         "menu_specials": "Specials",
         "shoppingCart_text": "Shopping Cart",
         "loginMessage": "Welcome, ",
@@ -42,24 +42,35 @@ dict = {
         "clickNotificationText": "Press anywhere to continue.",
         "clickNotificationText1": "Press anywhere to continue.",
         "clickNotificationText2": "Press anywhere to continue.",
+	"clickNotificationText3": "Press anywhere to continue.",
         "payCreditsNotificationTitle": "Order paid with credits!",
         "noCreditsNotificationTitle": "Not enough credits.",
 	"loginButton": "Log in",
 	"username": "Username",
-	"password": "Password"
+	"password": "Password",
+	"hide": "hide",
+	"show": "show",
+	"stock": "In Stock",
+	'callSecurity': 'img/emergency.png',
+	"securityNotificationTitle": "Security has been called",
+	"menu_add_credit": "Add Credit",
+	"addedCreditNotificationTitle": "Credit has been added!",
+	"notAddedCreditNotificationTitle": "User does not exist!",
+	"amount": "Amount",
+	"addCreditButton": "Add Credit"
     },
 
     // Swedish dictionary
     'sv': {
         'title': "The Flying Dutchman",
         'flag': "img/sv.png",
-        "menu_all": "Alla",
+        "menu_all": "Alla drycker",
         "menu_beer": "Öl",
         "menu_wine": "Vin",
         "menu_spirits": "Drinkar",
         "menu_ecologic": "Eko",
         "menu_koscher": "Koscher",
-	    "menu_gluten_free": "Glutenfri",
+	"menu_gluten_free": "Glutenfri",
         "menu_specials": "Specialare",
         "shoppingCart_text": "Kundvagn",
         "loginMessage": "Välkommen, ",
@@ -79,49 +90,70 @@ dict = {
         "clickNotificationText": "Tryck varsomhelst för att fortsätta.",
         "clickNotificationText1": "Tryck varsomhelst för att fortsätta.",
         "clickNotificationText2": "Tryck varsomhelst för att fortsätta.",
+        "clickNotificationText3": "Tryck varsomhelst för att fortsätta.",
         "payCreditsNotificationTitle": "Beställning betald med credits!",
         "noCreditsNotificationTitle": "Ej tillräckligt med credits.",
 	"loginButton": "Logga in",
 	"username": "Användarnamn",
-	"password": "Lösenord"
+	"password": "Lösenord",
+	"hide": "dölj",
+	"show": "visa",
+	"stock": "I Lager",
+	'callSecurity': 'img/emergency.png',
+	"securityNotificationTitle": "Säkerhetsvakt har kallats",
+	"menu_add_credit": "Lägg Till Kredit",
+	"addedCreditNotificationTitle": "Kredit har lagts till!",
+	"notAddedCreditNotificationTitle": "Användaren existerar inte!",
+	"amount": "Belopp",
+	"addCreditButton": "Lägg Till"
     },
 
     //German dictionary
     'du': {
-      'title': "The Flying Dutchman",
-      'flag': "img/du.png",
-      "menu_all": "Alle",
-      "menu_beer": "Bier",
-      "menu_wine": "Wein",
-      "menu_spirits": "Cocktails",
-      "menu_ecologic": "Öko",
-      "menu_koscher": "Koscher",
-      "menu_gluten_free": "Glutenfrei",
-      "menu_specials": "Spezial",
-      "shoppingCart_text": "Einkaufswagen",
-      "loginMessage": "Willkommen, ",
-      "undoButton": "Umkehren",  /*aufmachen?*/
-      "redoButton": "Wiederholen",
-      "payBar": "Bezahlen an der Bar",
-      "payTable": "Zahlen an den Tisch",
-      "paymentButton": "Bestellen",
-      "tableNumberText": "Tischnr.:",
-      "proceedCheckout": "Weiter zur Zahlung",
-      "priceTotalTxt": "Total:",
-      "proceedPayment": "Bestellen!",
-      "newPerson": "[neue person]",
-      "paymentMethodText": "Bezahle an meinem Tisch",
-      "paymentCreditsText" : "Mit credits bezahlen",
-      "buyNotificationTitle": "Zahlung umgesetzt!",
-      "clickNotificationText": "Drücken Sie irgendwo, um fortzufahren.",
-      "clickNotificationText1": "Drücken Sie irgendwo, um fortzufahren.",
-      "clickNotificationText2": "Drücken Sie irgendwo, um fortzufahren.",
-      "payCreditsNotificationTitle": "Bestellung mit Credits bezahlt!",
-      "noCreditsNotificationTitle": "Nicht genügend credits.",
-      "loginButton": "Anmelden",
-      "username": "Nutzername",
-      "password": "Passwort"
-	
+	'title': "The Flying Dutchman",
+	'flag': "img/du.png",
+	"menu_all": "Alle getrinke",
+	"menu_beer": "Bier",
+	"menu_wine": "Wein",
+	"menu_spirits": "Cocktails",
+	"menu_ecologic": "Öko",
+	"menu_koscher": "Koscher",
+	"menu_gluten_free": "Glutenfrei",
+	"menu_specials": "Spezial",
+	"shoppingCart_text": "Einkaufswagen",
+	"loginMessage": "Willkommen, ",
+	"undoButton": "Umkehren", 
+	"redoButton": "Wiederholen",
+	"payBar": "Bezahlen an der Bar",
+	"payTable": "Zahlen an den Tisch",
+	"paymentButton": "Bestellen",
+	"tableNumberText": "Tischnr.:",
+	"proceedCheckout": "Weiter zur Zahlung",
+	"priceTotalTxt": "Total:",
+	"proceedPayment": "Bestellen!",
+	"newPerson": "[neue person]",
+	"paymentMethodText": "Bezahle an meinem Tisch",
+	"paymentCreditsText" : "Mit credits bezahlen",
+	"buyNotificationTitle": "Zahlung umgesetzt!",
+	"clickNotificationText": "Drücken Sie irgendwo, um fortzufahren.",
+	"clickNotificationText1": "Drücken Sie irgendwo, um fortzufahren.",
+	"clickNotificationText2": "Drücken Sie irgendwo, um fortzufahren.",
+	"clickNotificationText3": "Drücken Sie irgendwo, um fortzufahren.",
+	"payCreditsNotificationTitle": "Bestellung mit Credits bezahlt!",
+	"noCreditsNotificationTitle": "Nicht genügend credits.",
+	"loginButton": "Anmelden",
+	"username": "Nutzername",
+	"password": "Passwort",
+	"hide": "vers.",
+	"show": "zeig",
+	"stock": "Lager",
+	'callSecurity': 'img/emergency.png',
+	"securityNotificationTitle": "Sicherheit wurde aufgerufen",
+	"menu_add_credit": "Hinzufügen Kredit",
+	"addedCreditNotificationTitle": "Kredit gelagt hast",
+	"notAddedCreditNotificationTitle": "Nutzer gibt es nicht",
+	"amount": "Menge",
+	"addCreditButton": "Hinzufugen"
     },
 }
 
@@ -141,4 +173,8 @@ function change_lang() {
         language = 'en';
     }
     update_view();
+}
+
+function call_security() {
+    securityNotification(true);
 }
